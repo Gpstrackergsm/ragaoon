@@ -1,0 +1,37 @@
+{% comment %}
+  Renders a product card
+  Usage:
+  {% render 'product-card', product: product %}
+{% endcomment %}
+
+<div class="product-card">
+  <div class="product-card-badge">Top Seller</div>
+  <a href="{{ product.url }}" class="product-card-image-wrap">
+    {% if product.featured_image %}
+      <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title | escape }}" loading="lazy">
+    {% else %}
+      <div class="product-card-placeholder">💺</div>
+    {% endif %}
+  </a>
+  <div class="product-card-info">
+    <div class="product-card-rating">
+      {% for i in (1..5) %}
+        {% render 'icon', name: 'star' %}
+      {% endfor %}
+      <span>(4.9)</span>
+    </div>
+    <h3 class="product-card-title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+    <div class="product-card-price">
+      <span class="price-current">{{ product.price | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <s class="price-compare">{{ product.compare_at_price | money }}</s>
+      {% endif %}
+    </div>
+    <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <button type="submit" class="btn btn-sm btn-primary btn-block">Quick Add</button>
+    </form>
+  </div>
+</div>

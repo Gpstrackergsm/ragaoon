@@ -1,0 +1,119 @@
+{% comment %}
+  Slide-out AJAX Cart Drawer with Free Shipping Progress Bar & Upsells
+{% endcomment %}
+
+<div id="CartDrawer" class="cart-drawer-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="cart-drawer-backdrop" data-drawer-close></div>
+  <div class="cart-drawer-panel">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-wrap">
+        <h3 class="cart-drawer-title">
+          {% render 'icon', name: 'cart' %}
+          <span>Your Bag</span>
+        </h3>
+        <span class="cart-drawer-count" data-cart-count>{{ cart.item_count }}</span>
+      </div>
+      <button class="cart-drawer-close" data-drawer-close aria-label="Close cart">
+        {% render 'icon', name: 'close' %}
+      </button>
+    </div>
+
+    <!-- Free Shipping Goal Progress Bar -->
+    <div class="cart-drawer-shipping-meter">
+      {% assign threshold = settings.free_shipping_threshold | default: 75 | times: 100 %}
+      {% assign remaining = threshold | minus: cart.total_price %}
+      <div class="shipping-meter-text" data-shipping-meter-text>
+        {% if cart.total_price >= threshold %}
+          <span class="shipping-unlocked">🎉 <strong>CONGRATULATIONS!</strong> You've unlocked <strong>FREE Express Shipping</strong>!</span>
+        {% else %}
+          <span>Add <strong>{{ remaining | money }}</strong> more to unlock <strong>FREE Express Shipping</strong>!</span>
+        {% endif %}
+      </div>
+      <div class="shipping-meter-bar">
+        {% assign progress_pct = cart.total_price | times: 100 | divided_by: threshold %}
+        {% if progress_pct > 100 %}{% assign progress_pct = 100 %}{% endif %}
+        <div class="shipping-meter-fill" style="width: {{ progress_pct }}%;" data-shipping-meter-fill></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-drawer-items-wrap" data-cart-items-container>
+      {% if cart.item_count == 0 %}
+        <div class="cart-drawer-empty">
+          <div class="empty-icon-wrap">
+            {% render 'icon', name: 'cart' %}
+          </div>
+          <h4>Your cart is empty</h4>
+          <p>Don't miss out on next-gen ergonomic comfort.</p>
+          <button class="btn btn-primary" data-drawer-close>Explore Flagship Chair</button>
+        </div>
+      {% else %}
+        <div class="cart-drawer-items">
+          {% for item in cart.items %}
+            <div class="cart-item" data-line-item-key="{{ item.key }}">
+              <div class="cart-item-image">
+                {% if item.image %}
+                  <img src="{{ item.image | image_url: width: 140 }}" alt="{{ item.title | escape }}" loading="lazy">
+                {% else %}
+                  <div class="cart-item-placeholder">💺</div>
+                {% endif %}
+              </div>
+              <div class="cart-item-details">
+                <a href="{{ item.url }}" class="cart-item-title">{{ item.product.title }}</a>
+                {% unless item.variant.title contains 'Default' %}
+                  <span class="cart-item-variant">{{ item.variant.title }}</span>
+                {% endunless %}
+                <div class="cart-item-price-row">
+                  <span class="cart-item-price">{{ item.final_line_price | money }}</span>
+                  {% if item.original_line_price > item.final_line_price %}
+                    <s class="cart-item-original-price">{{ item.original_line_price | money }}</s>
+                  {% endif %}
+                </div>
+                <div class="cart-item-qty-actions">
+                  <div class="qty-control">
+                    <button class="qty-btn" data-cart-update-qty="{{ item.quantity | minus: 1 }}" data-key="{{ item.key }}">-</button>
+                    <input type="number" class="qty-input" value="{{ item.quantity }}" readonly>
+                    <button class="qty-btn" data-cart-update-qty="{{ item.quantity | plus: 1 }}" data-key="{{ item.key }}">+</button>
+                  </div>
+                  <button class="cart-item-remove" data-cart-remove="{{ item.key }}" aria-label="Remove item">Remove</button>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Quick Upsell Addon -->
+    <div class="cart-drawer-upsell">
+      <div class="upsell-badge">Frequently Added Together</div>
+      <div class="upsell-card">
+        <div class="upsell-thumb">🛞</div>
+        <div class="upsell-info">
+          <span class="upsell-title">Silent Rollerblade Caster Wheels (Set of 5)</span>
+          <span class="upsell-price">$29.99 <s class="text-muted">$49.99</s></span>
+        </div>
+        <button class="btn btn-sm btn-outline upsell-btn" data-quick-upsell>+ Add</button>
+      </div>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-subtotal-row">
+        <span>Subtotal</span>
+        <span class="cart-drawer-subtotal" data-cart-subtotal>{{ cart.total_price | money }}</span>
+      </div>
+      <p class="cart-drawer-taxes-note">Taxes & shipping calculated at checkout. 30-Day Risk-Free Trial included.</p>
+      <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form">
+        <button type="submit" name="checkout" class="btn btn-primary btn-block btn-lg checkout-btn">
+          <span>Lock In Deal & Checkout</span>
+          {% render 'icon', name: 'arrow-right' %}
+        </button>
+      </form>
+      <div class="cart-guarantee-mini">
+        <span>{% render 'icon', name: 'shield' %} 256-Bit SSL Encrypted Checkout</span>
+        <span>{% render 'icon', name: 'refresh' %} 30-Day Money Back Guarantee</span>
+      </div>
+    </div>
+  </div>
+</div>

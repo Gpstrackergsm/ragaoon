@@ -1,0 +1,207 @@
+<section class="product-section" id="ProductOverview">
+  <div class="container product-container">
+    <!-- Gallery Column -->
+    <div class="product-gallery-col">
+      <div class="product-gallery-main">
+        <div class="gallery-badge-floating">
+          <span class="badge-discount">-31% OFF</span>
+          <span class="badge-bestseller">#1 Choice</span>
+        </div>
+        <img id="MainProductImage" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=1000&auto=format&fit=crop&q=80" alt="JECQCUPG Ergonomic Reclining Gaming Chair - Arctic Black" class="gallery-active-img">
+      </div>
+
+      <div class="product-gallery-thumbs" id="GalleryThumbs">
+        <button class="thumb-btn active" data-img="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=1000&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=200&auto=format&fit=crop&q=80" alt="Front Ergonomic View">
+          <span>Front</span>
+        </button>
+        <button class="thumb-btn" data-img="https://images.unsplash.com/photo-1580481077195-c328a37db71a?w=1000&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1580481077195-c328a37db71a?w=200&auto=format&fit=crop&q=80" alt="Recline Angle 135 Degrees">
+          <span>135° Recline</span>
+        </button>
+        <button class="thumb-btn" data-img="https://images.unsplash.com/photo-1589384267710-7a25be11b222?w=1000&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1589384267710-7a25be11b222?w=200&auto=format&fit=crop&q=80" alt="Pocket Spring Seat Cushion">
+          <span>Spring Cushion</span>
+        </button>
+        <button class="thumb-btn" data-img="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1000&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=200&auto=format&fit=crop&q=80" alt="Synchronized Linkage Armrests">
+          <span>Armrests</span>
+        </button>
+      </div>
+
+      <!-- Trust Mini Badges below gallery -->
+      <div class="gallery-trust-strip">
+        <div class="trust-mini-item">
+          {% render 'icon', name: 'truck' %}
+          <div>
+            <strong>Fast 2-4 Day Delivery</strong>
+            <small>Dispatched from US Warehouse</small>
+          </div>
+        </div>
+        <div class="trust-mini-item">
+          {% render 'icon', name: 'refresh' %}
+          <div>
+            <strong>30-Day Risk-Free Trial</strong>
+            <small>Love it or 100% money back</small>
+          </div>
+        </div>
+        <div class="trust-mini-item">
+          {% render 'icon', name: 'shield' %}
+          <div>
+            <strong>3-Year Full Warranty</strong>
+            <small>Steel frame & cylinder covered</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Form & Details Column -->
+    <div class="product-info-col">
+      <!-- Reviews Header -->
+      <div class="product-rating-header">
+        <div class="stars-group">
+          {% for i in (1..5) %}
+            {% render 'icon', name: 'star' %}
+          {% endfor %}
+        </div>
+        <a href="#Reviews" class="rating-link"><strong>4.9 / 5.0</strong> &bull; 1,842 Verified Buyer Reviews</a>
+        <span class="stock-pill">⚡ In Stock, Ships in 24h</span>
+      </div>
+
+      <h1 class="product-page-title">
+        JECQCUPG Upgraded Ergonomic Gaming Chair
+      </h1>
+      <p class="product-page-subtitle">
+        With Synchronized Linkage Armrests, 90°–135° Recline, Retractable Footrest & Sofa-Grade Pocket Spring Seat (400 LBS Max Load).
+      </p>
+
+      <!-- Pricing Box -->
+      <div class="product-price-box">
+        <div class="price-main-row">
+          <span class="price-current-large" id="ProductPrice">$199.99</span>
+          <s class="price-compare-large" id="ProductComparePrice">$289.99</s>
+          <span class="price-discount-pill">Save $90 (31% OFF)</span>
+        </div>
+        <div class="installments-row">
+          <span>Or 4 interest-free payments of <strong>$49.99</strong> with</span>
+          <span class="bnpl-badge">Klarna</span>
+          <span class="bnpl-badge">afterpay</span>
+        </div>
+      </div>
+
+      <!-- Live Scarcity & Countdown -->
+      <div class="stock-scarcity-card">
+        <div class="scarcity-header">
+          <span class="scarcity-fire">🔥 High Demand:</span>
+          <span>Only <strong>6 units</strong> left in stock for today's shipment!</span>
+        </div>
+        <div class="scarcity-progress-bar">
+          <div class="scarcity-progress-fill" style="width: 88%;"></div>
+        </div>
+        <div class="scarcity-timer">
+          <span>Order within <strong id="CountdownTimer">03h 42m 19s</strong> for same-day dispatch.</span>
+        </div>
+      </div>
+
+      <!-- Color Variant Selector -->
+      <div class="variant-selection-area">
+        <div class="variant-header-row">
+          <label class="variant-label">
+            Selected Color: <span class="selected-color-name" id="SelectedColorName">Arctic Black</span>
+          </label>
+          <span class="variant-availability">In Stock</span>
+        </div>
+
+        <div class="swatches-grid">
+          <label class="swatch-option active" data-color="Arctic Black" data-price="$199.99" data-compare="$289.99" data-img="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=1000&auto=format&fit=crop&q=80">
+            <input type="radio" name="color_variant" value="Arctic Black" checked>
+            <span class="swatch-circle swatch-arctic-black"></span>
+            <span class="swatch-text">Arctic Black</span>
+            <span class="swatch-tag">Popular</span>
+          </label>
+
+          <label class="swatch-option" data-color="Crimson Red" data-price="$199.99" data-compare="$289.99" data-img="https://images.unsplash.com/photo-1580481077195-c328a37db71a?w=1000&auto=format&fit=crop&q=80">
+            <input type="radio" name="color_variant" value="Crimson Red">
+            <span class="swatch-circle swatch-crimson-red"></span>
+            <span class="swatch-text">Crimson Red</span>
+          </label>
+
+          <label class="swatch-option" data-color="Jet Black" data-price="$199.99" data-compare="$289.99" data-img="https://images.unsplash.com/photo-1589384267710-7a25be11b222?w=1000&auto=format&fit=crop&q=80">
+            <input type="radio" name="color_variant" value="Jet Black">
+            <span class="swatch-circle swatch-jet-black"></span>
+            <span class="swatch-text">Jet Black</span>
+          </label>
+
+          <label class="swatch-option" data-color="Arctic White" data-price="$209.99" data-compare="$299.99" data-img="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1000&auto=format&fit=crop&q=80">
+            <input type="radio" name="color_variant" value="Arctic White">
+            <span class="swatch-circle swatch-arctic-white"></span>
+            <span class="swatch-text">Arctic White</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Add to Cart Form -->
+      <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" id="MainAddToCartForm" class="product-purchase-form">
+        <input type="hidden" name="id" value="{{ product.variants.first.id | default: 1 }}">
+        <input type="hidden" name="quantity" id="ProductQuantityInput" value="1">
+
+        <div class="form-cta-row">
+          <div class="qty-stepper-box">
+            <button type="button" class="stepper-btn" id="QtyMinus">-</button>
+            <span class="stepper-val" id="QtyDisplay">1</span>
+            <button type="button" class="stepper-btn" id="QtyPlus">+</button>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-lg main-atc-btn" id="MainAddToCartBtn">
+            {% render 'icon', name: 'cart' %}
+            <span>Add To Cart &bull; Free Shipping</span>
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-accent btn-lg btn-block buy-now-btn" id="MainBuyNowBtn">
+          {% render 'icon', name: 'zap' %}
+          <span>Instant Checkout (1-Click)</span>
+        </button>
+      </form>
+
+      <!-- Key Features Quick Checklist -->
+      <div class="product-checklist">
+        <div class="check-item">
+          {% render 'icon', name: 'check' %}
+          <span><strong>7-Point Ergonomic Support:</strong> Head, neck, back, lumbar, arms, hips & legs</span>
+        </div>
+        <div class="check-item">
+          {% render 'icon', name: 'check' %}
+          <span><strong>Sofa-Grade Pocket Springs:</strong> 16 encased coils prevent tailbone fatigue</span>
+        </div>
+        <div class="check-item">
+          {% render 'icon', name: 'check' %}
+          <span><strong>Synchronized Linkage Armrests:</strong> Moves automatically with 90°–135° recline</span>
+        </div>
+        <div class="check-item">
+          {% render 'icon', name: 'check' %}
+          <span><strong>400 LBS Tested Capacity:</strong> Reinforced steel chassis & SGS Class-4 gas lift</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "JECQCUPG Upgraded Ergonomic Gaming Chair"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Product Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+{
+  "general": {
+    "accessibility": {
+      "close": "Close",
+      "menu": "Menu",
+      "cart": "Shopping Cart",
+      "loading": "Loading..."
+    },
+    "currency": {
+      "format": "${{amount}}"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "buy_now": "Buy with 1-Click",
+      "in_stock": "In Stock, Ready to Ship",
+      "low_stock": "Only a few left in stock - order soon",
+      "quantity": "Quantity",
+      "color": "Color",
+      "save": "Save"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Cart",
+      "empty": "Your cart is currently empty.",
+      "continue_shopping": "Continue Shopping",
+      "subtotal": "Subtotal",
+      "checkout": "Proceed to Checkout",
+      "free_shipping_reached": "🎉 You qualify for FREE Express Shipping!",
+      "free_shipping_needed": "Add {{ amount }} more to unlock FREE Express Shipping!"
+    }
+  },
+  "sections": {
+    "hero": {
+      "badge": "2026 Next-Gen Ergonomics",
+      "headline": "Engineered for 12+ Hour Comfort & Peak Gaming Focus",
+      "subheadline": "Featuring 7-point anatomical support, synchronized linkage armrests, sofa-grade pocket spring core, and a smooth 90°–135° recline with retractable footrest.",
+      "cta": "Claim Your Chair - Save $90",
+      "secondary_cta": "Explore Features"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<section class="hero-section" id="HeroSection">
+  <div class="hero-ambient-glow"></div>
+  <div class="container hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span>2026 Upgraded Pro Ergonomic Series</span>
+      </div>
+
+      <h1 class="hero-title">
+        The Ergonomic Gaming Chair Engineered for <span class="text-gradient">Zero-Strain Comfort.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Say goodbye to stiff foam and lower back aches. Experience our <strong>7-point orthopedic support</strong>, <strong>16-pocket spring sofa cushion</strong>, and smooth <strong>90°–135° recline</strong> with auto-synchronizing linkage armrests & retractable footrest.
+      </p>
+
+      <div class="hero-action-row">
+        <a href="#ProductOverview" class="btn btn-primary btn-lg hero-cta">
+          <span>Claim 31% Off Launch Discount</span>
+          {% render 'icon', name: 'arrow-right' %}
+        </a>
+        <a href="#ReclineShowcase" class="btn btn-outline btn-lg hero-secondary">
+          <span>Experience 90°-135° Recline</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="hero-trust-bar">
+        <div class="trust-pill">
+          {% render 'icon', name: 'shield' %}
+          <span>400 LBS Weight Tested</span>
+        </div>
+        <div class="trust-pill">
+          {% render 'icon', name: 'check' %}
+          <span>SGS Class-4 Certified</span>
+        </div>
+        <div class="trust-pill">
+          {% render 'icon', name: 'refresh' %}
+          <span>30-Day Risk-Free Trial</span>
+        </div>
+        <div class="trust-pill">
+          {% render 'icon', name: 'truck' %}
+          <span>Free 2-4 Day Delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-product-stage">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=900&auto=format&fit=crop&q=80" alt="JECQCUPG Upgraded Ergonomic Gaming Chair" class="hero-chair-img">
+        </div>
+        <!-- Floating Spec Callouts -->
+        <div class="feature-tag feature-tag-1">
+          <div class="tag-icon">⚡</div>
+          <div class="tag-text">
+            <strong>Linkage Armrests</strong>
+            <span>Auto-moves with 90°-135° recline</span>
+          </div>
+        </div>
+
+        <div class="feature-tag feature-tag-2">
+          <div class="tag-icon">🛋️</div>
+          <div class="tag-text">
+            <strong>Pocket Spring Core</strong>
+            <span>Sofa-grade cushioning, no sagging</span>
+          </div>
+        </div>
+
+        <div class="feature-tag feature-tag-3">
+          <div class="tag-icon">🛡️</div>
+          <div class="tag-text">
+            <strong>Class-4 SGS Cylinder</strong>
+            <span>Explosion-proof 400 lbs stability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "2026 Upgraded Pro Ergonomic Series"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Hero Title",
+      "default": "The Ergonomic Gaming Chair Engineered for Zero-Strain Comfort."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

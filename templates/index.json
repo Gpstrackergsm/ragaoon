@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "badge_text": "2026 Upgraded Pro Ergonomic Series",
+        "title": "The Ergonomic Gaming Chair Engineered for Zero-Strain Comfort."
+      }
+    },
+    "product": {
+      "type": "main-product",
+      "settings": {
+        "title": "JECQCUPG Upgraded Ergonomic Gaming Chair"
+      }
+    },
+    "recline": {
+      "type": "recline-showcase",
+      "settings": {
+        "title": "90° to 135° Multi-Angle Recline With Synchronized Linkage"
+      }
+    },
+    "ergonomics": {
+      "type": "ergonomic-anatomy",
+      "settings": {
+        "title": "7-Point Orthopedic Body Support"
+      }
+    },
+    "cushion": {
+      "type": "cushion-engineering",
+      "settings": {
+        "title": "Why Traditional Foam Chairs Fail (And Why Pocket Springs Win)"
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "settings": {
+        "title": "See How JECQCUPG Crushes the Competition"
+      }
+    },
+    "specs": {
+      "type": "product-specs",
+      "settings": {
+        "title": "Technical Specifications & Engineering Blueprint"
+      }
+    },
+    "reviews": {
+      "type": "reviews-testimonials",
+      "settings": {
+        "title": "Loved by 15,000+ Gamers, Streamers & WFH Pros"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      }
+    },
+    "guarantee": {
+      "type": "guarantee-banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "product",
+    "recline",
+    "ergonomics",
+    "cushion",
+    "comparison",
+    "specs",
+    "reviews",
+    "faq",
+    "guarantee"
+  ]
+}

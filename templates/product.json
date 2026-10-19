@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "title": "JECQCUPG Upgraded Ergonomic Gaming Chair"
+      }
+    },
+    "recline": {
+      "type": "recline-showcase",
+      "settings": {}
+    },
+    "ergonomics": {
+      "type": "ergonomic-anatomy",
+      "settings": {}
+    },
+    "cushion": {
+      "type": "cushion-engineering",
+      "settings": {}
+    },
+    "specs": {
+      "type": "product-specs",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "reviews-testimonials",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "guarantee": {
+      "type": "guarantee-banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "recline",
+    "ergonomics",
+    "cushion",
+    "specs",
+    "reviews",
+    "faq",
+    "guarantee"
+  ]
+}

@@ -1,0 +1,99 @@
+<section class="recline-section" id="ReclineShowcase">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag">Smooth Mechanical Precision</span>
+      <h2 class="section-title">90° to 135° Multi-Angle Recline With Synchronized Linkage</h2>
+      <p class="section-desc">
+        Unlike standard chairs whose armrests stay rigid and pull your shoulders back, our synchronized linkage armrests automatically pivot with the backrest to provide continuous elbow and forearm support at any angle.
+      </p>
+    </div>
+
+    <!-- Interactive Angle Selector Tabs -->
+    <div class="recline-interactive-box">
+      <div class="angle-tabs">
+        <button class="angle-tab active" data-angle="90">
+          <span class="angle-number">90°</span>
+          <span class="angle-label">Peak Work & Competitive Mode</span>
+        </button>
+        <button class="angle-tab" data-angle="110">
+          <span class="angle-number">110°</span>
+          <span class="angle-label">Gaming & Casual Immersion</span>
+        </button>
+        <button class="angle-tab" data-angle="135">
+          <span class="angle-number">135°</span>
+          <span class="angle-label">Zero-G Rest & Power Nap</span>
+        </button>
+      </div>
+
+      <div class="angle-display-card">
+        <div class="angle-info-pane">
+          <div class="angle-badge" id="AngleBadge">Active Mode: 90° Focus Work</div>
+          <h3 class="angle-heading" id="AngleHeading">Locked-In Orthopedic Alignment</h3>
+          <p class="angle-description" id="AngleDesc">
+            Maintains proper spinal curvature during long typing, high-stakes competitive gaming, or video editing. Provides steady lumbar support and keeps your posture upright and alert without fatigue.
+          </p>
+
+          <div class="angle-specs-list" id="AngleSpecs">
+            <div class="angle-spec-item">
+              {% render 'icon', name: 'check' %}
+              <span><strong>Backrest:</strong> 90° upright lock for spine decompression</span>
+            </div>
+            <div class="angle-spec-item">
+              {% render 'icon', name: 'check' %}
+              <span><strong>Armrests:</strong> Level positioning for keyboard and mouse precision</span>
+            </div>
+            <div class="angle-spec-item">
+              {% render 'icon', name: 'check' %}
+              <span><strong>Footrest:</strong> Stowed beneath seat for unrestricted leg movement</span>
+            </div>
+          </div>
+
+          <a href="#ProductOverview" class="btn btn-primary mt-4">Order JECQCUPG Chair</a>
+        </div>
+
+        <div class="angle-visual-pane">
+          <div class="angle-art-stage">
+            <!-- Dynamic Angle Diagram Simulation -->
+            <div class="chair-angle-visualizer" id="ChairAngleVisualizer" data-current-angle="90">
+              <div class="chair-base-visual">
+                <div class="wheel-group"></div>
+                <div class="cylinder-visual"></div>
+                <div class="seat-visual">
+                  <div class="cushion-core">Pocket Spring Core</div>
+                </div>
+                <div class="backrest-visual" id="BackrestVisual" style="transform: rotate(0deg);">
+                  <div class="headrest-art"></div>
+                  <div class="lumbar-art"></div>
+                  <div class="armrest-visual" id="ArmrestVisual" style="transform: rotate(0deg);"></div>
+                </div>
+                <div class="footrest-visual" id="FootrestVisual" style="opacity: 0; transform: translateX(-30px);">
+                  <div class="footrest-pad">Padded Footrest</div>
+                </div>
+              </div>
+            </div>
+            <div class="angle-indicator-pill" id="AngleDegreesIndicator">Current Angle: 90°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recline Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "90° to 135° Multi-Angle Recline"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recline Showcase"
+    }
+  ]
+}
+{% endschema %}

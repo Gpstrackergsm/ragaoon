@@ -1,0 +1,53 @@
+<header class="site-header" id="SiteHeader">
+  <div class="header-container">
+    <div class="header-logo-wrap">
+      <a href="/" class="header-logo">
+        <span class="logo-mark">JECQCUPG</span>
+        <span class="logo-sub">ERGONOMICS</span>
+      </a>
+    </div>
+
+    <nav class="header-nav" id="HeaderNav">
+      <ul class="nav-links">
+        <li><a href="#ProductOverview" class="nav-link">Chair Overview</a></li>
+        <li><a href="#ReclineShowcase" class="nav-link">90°-135° Recline</a></li>
+        <li><a href="#Ergonomics" class="nav-link">7-Point Support</a></li>
+        <li><a href="#SpringSeat" class="nav-link">Pocket Spring Core</a></li>
+        <li><a href="#Specs" class="nav-link">Tech Specs</a></li>
+        <li><a href="#Reviews" class="nav-link">Reviews (4.9★)</a></li>
+        <li><a href="#FAQ" class="nav-link">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-trigger-btn" data-drawer-open aria-label="Open cart">
+        {% render 'icon', name: 'cart' %}
+        <span class="cart-badge-count" data-cart-count>{{ cart.item_count }}</span>
+      </button>
+
+      <a href="#ProductOverview" class="btn btn-sm btn-primary header-cta-btn">
+        <span>Order Now & Save $90</span>
+      </a>
+
+      <button class="mobile-menu-toggle" id="MobileMenuToggle" aria-label="Open Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Brand Name",
+      "default": "JECQCUPG"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,80 @@
+<div class="container cart-page-container">
+  <div class="cart-page-header">
+    <h1 class="cart-page-title">Shopping Cart</h1>
+    <a href="/" class="continue-link">&larr; Back to Flagship Chair</a>
+  </div>
+
+  {% if cart.item_count == 0 %}
+    <div class="cart-empty-state">
+      <div class="empty-icon-wrap">{% render 'icon', name: 'cart' %}</div>
+      <h2>Your cart is currently empty</h2>
+      <p>Ready to upgrade to next-level ergonomic comfort?</p>
+      <a href="/" class="btn btn-primary btn-lg mt-3">View JECQCUPG Chair</a>
+    </div>
+  {% else %}
+    <form action="{{ routes.cart_url }}" method="post" id="cart" class="cart-page-form">
+      <div class="cart-page-grid">
+        <div class="cart-page-items">
+          {% for item in cart.items %}
+            <div class="cart-page-item">
+              <div class="cart-page-img">
+                {% if item.image %}
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}">
+                {% else %}
+                  <div class="cart-placeholder">💺</div>
+                {% endif %}
+              </div>
+              <div class="cart-page-details">
+                <h3><a href="{{ item.url }}">{{ item.product.title }}</a></h3>
+                {% unless item.variant.title contains 'Default' %}
+                  <div class="variant-name">{{ item.variant.title }}</div>
+                {% endunless %}
+                <div class="cart-price">{{ item.final_line_price | money }}</div>
+                <div class="cart-page-qty-row">
+                  <div class="qty-control">
+                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" class="qty-btn">-</a>
+                    <span class="qty-val">{{ item.quantity }}</span>
+                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" class="qty-btn">+</a>
+                  </div>
+                  <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" class="remove-link">Remove</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="cart-page-summary">
+          <div class="summary-card">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span class="summary-subtotal">{{ cart.total_price | money }}</span>
+            </div>
+            <div class="summary-row">
+              <span>Standard US Delivery</span>
+              <span class="text-success font-bold">FREE</span>
+            </div>
+            <div class="summary-row">
+              <span>30-Day Risk-Free Trial</span>
+              <span class="text-success font-bold">INCLUDED</span>
+            </div>
+            <div class="summary-divider"></div>
+            <button type="submit" name="checkout" class="btn btn-primary btn-block btn-lg">
+              Proceed to Secure Checkout &rarr;
+            </button>
+            <div class="cart-guarantee-mini mt-3">
+              <span>{% render 'icon', name: 'shield' %} 256-Bit SSL Encrypted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "settings": []
+}
+{% endschema %}

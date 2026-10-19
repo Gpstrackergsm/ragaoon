@@ -1,0 +1,53 @@
+<div class="announcement-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="announcement-container">
+    <div class="announcement-item announcement-item-flash">
+      {% render 'icon', name: 'zap' %}
+      <span>{{ section.settings.flash_text }}</span>
+    </div>
+    <div class="announcement-item announcement-item-highlight">
+      <span>{{ section.settings.center_text }}</span>
+    </div>
+    <div class="announcement-item announcement-item-trust">
+      {% render 'icon', name: 'truck' %}
+      <span>{{ section.settings.right_text }}</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#e63946"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "flash_text",
+      "label": "Flash Offer Text",
+      "default": "LIMITED LAUNCH: 31% OFF TODAY ONLY"
+    },
+    {
+      "type": "text",
+      "id": "center_text",
+      "label": "Center Announcement",
+      "default": "🔥 Upgraded Synchronized Armrests & 400 LBS Heavy-Duty Frame"
+    },
+    {
+      "type": "text",
+      "id": "right_text",
+      "label": "Right Highlight",
+      "default": "FREE Fast Shipping (2-4 Days) + 3-Year Warranty"
+    }
+  ]
+}
+{% endschema %}

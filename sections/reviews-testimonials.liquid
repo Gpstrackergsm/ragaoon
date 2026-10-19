@@ -1,0 +1,149 @@
+<section class="reviews-section" id="Reviews">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag">Real Player & Worker Feedback</span>
+      <h2 class="section-title">Loved by 15,000+ Gamers, Streamers & WFH Pros</h2>
+      <p class="section-desc">
+        Read real, unfiltered experiences from customers who upgraded from standard chairs to JECQCUPG.
+      </p>
+    </div>
+
+    <!-- Rating Summary Card -->
+    <div class="rating-overview-card">
+      <div class="rating-big-score">
+        <span class="score-number">4.9</span>
+        <div class="stars-row">
+          {% for i in (1..5) %}
+            {% render 'icon', name: 'star' %}
+          {% endfor %}
+        </div>
+        <span class="score-total">Based on 1,842 verified reviews</span>
+      </div>
+
+      <div class="rating-bars-col">
+        <div class="bar-row">
+          <span>5 Star</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 92%;"></div></div>
+          <span>92%</span>
+        </div>
+        <div class="bar-row">
+          <span>4 Star</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 6%;"></div></div>
+          <span>6%</span>
+        </div>
+        <div class="bar-row">
+          <span>3 Star</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 1.5%;"></div></div>
+          <span>1.5%</span>
+        </div>
+        <div class="bar-row">
+          <span>2 Star</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 0.5%;"></div></div>
+          <span>0.5%</span>
+        </div>
+        <div class="bar-row">
+          <span>1 Star</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 0%;"></div></div>
+          <span>0%</span>
+        </div>
+      </div>
+
+      <div class="rating-highlights-col">
+        <div class="badge-check-row">
+          {% render 'icon', name: 'check' %}
+          <span>98% Report Reduced Lower Back Strain</span>
+        </div>
+        <div class="badge-check-row">
+          {% render 'icon', name: 'check' %}
+          <span>95% Prefer Pocket Springs over Stiff Foam</span>
+        </div>
+        <div class="badge-check-row">
+          {% render 'icon', name: 'check' %}
+          <span>96% Love the 135° Recline & Footrest Combo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div class="reviewer-avatar">MK</div>
+          <div class="reviewer-meta">
+            <h4 class="reviewer-name">Marcus K.</h4>
+            <span class="verified-pill">{% render 'icon', name: 'check' %} Verified Buyer</span>
+          </div>
+        </div>
+        <div class="review-stars">
+          {% for i in (1..5) %}{% render 'icon', name: 'star' %}{% endfor %}
+          <span class="review-variant">Color: Arctic Black</span>
+        </div>
+        <h4 class="review-title">&ldquo;The pocket spring cushion is a night-and-day difference!&rdquo;</h4>
+        <p class="review-text">
+          I work as a software engineer 9 hours a day and game for 3 hours at night. Every previous gaming chair left my tailbone numb by 3 PM. This chair has actual mattress pocket coils inside. No numbness, no pressure points. The synchronized armrests that glide back when reclining are genius.
+        </p>
+        <span class="review-date">Purchased 2 weeks ago</span>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div class="reviewer-avatar">ER</div>
+          <div class="reviewer-meta">
+            <h4 class="reviewer-name">Elena R.</h4>
+            <span class="verified-pill">{% render 'icon', name: 'check' %} Verified Buyer</span>
+          </div>
+        </div>
+        <div class="review-stars">
+          {% for i in (1..5) %}{% render 'icon', name: 'star' %}{% endfor %}
+          <span class="review-variant">Color: Crimson Red</span>
+        </div>
+        <h4 class="review-title">&ldquo;Finally a gaming chair where I can sit cross-legged!&rdquo;</h4>
+        <p class="review-text">
+          Traditional racing chairs have those annoying hard metal wings on the side of the seat that dig into your thighs. The JECQCUPG has a flat 51cm wide seat! It's super wide, breathable, and the footrest pulls out smoothly when I want to take a 20-minute power nap between calls.
+        </p>
+        <span class="review-date">Purchased 1 month ago</span>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="review-card-top">
+          <div class="reviewer-avatar">TB</div>
+          <div class="reviewer-meta">
+            <h4 class="reviewer-name">Tyler B.</h4>
+            <span class="verified-pill">{% render 'icon', name: 'check' %} Verified Buyer</span>
+          </div>
+        </div>
+        <div class="review-stars">
+          {% for i in (1..5) %}{% render 'icon', name: 'star' %}{% endfor %}
+          <span class="review-variant">Color: Jet Black</span>
+        </div>
+        <h4 class="review-title">&ldquo;Built like a tank &mdash; easily holds my 260 lbs frame.&rdquo;</h4>
+        <p class="review-text">
+          As a big guy (6'2", 260 lbs), I was worried about cheap gas cylinders dropping. The Class-4 cylinder and steel base on this chair are rock solid. Assembly took 18 minutes with the included tools. Best $200 I've spent on my desk setup.
+        </p>
+        <span class="review-date">Purchased 3 weeks ago</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews & Social Proof",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Loved by 15,000+ Gamers & Professionals"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews & Social Proof"
+    }
+  ]
+}
+{% endschema %}
