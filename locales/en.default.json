@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "accessibility": {
@@ -41,6 +50,13 @@
       "subheadline": "Featuring 7-point anatomical support, synchronized linkage armrests, sofa-grade pocket spring core, and a smooth 90°–135° recline with retractable footrest.",
       "cta": "Claim Your Ragaoon Chair - $89.00 USD",
       "secondary_cta": "Explore Features"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "enter_shipping_address": "0$"
+      }
     }
   }
 }
