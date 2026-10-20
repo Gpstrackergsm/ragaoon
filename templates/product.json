@@ -3,8 +3,12 @@
     "main": {
       "type": "main-product",
       "settings": {
-        "title": "JECQCUPG Upgraded Ergonomic Gaming Chair"
+        "title": "Ragaoon Ergonomic Gaming Chair"
       }
+    },
+    "video": {
+      "type": "video-showcase",
+      "settings": {}
     },
     "recline": {
       "type": "recline-showcase",
@@ -37,6 +41,7 @@
   },
   "order": [
     "main",
+    "video",
     "recline",
     "ergonomics",
     "cushion",

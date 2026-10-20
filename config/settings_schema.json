@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "ErgoPro JECQCUPG",
+    "theme_name": "Ragaoon Ergonomics",
     "theme_version": "1.0.0",
-    "theme_author": "Antigravity",
-    "theme_documentation_url": "https://shopify.dev",
-    "theme_support_url": "https://shopify.dev"
+    "theme_author": "ragaoon",
+    "theme_documentation_url": "https://ragaoon.com.co",
+    "theme_support_url": "https://ragaoon.com.co"
   },
   {
     "name": "Colors & Aesthetics",
@@ -71,7 +71,7 @@
         "type": "number",
         "id": "free_shipping_threshold",
         "label": "Free Shipping Threshold ($)",
-        "default": 100
+        "default": 75
       },
       {
         "type": "checkbox",

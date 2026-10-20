@@ -3,14 +3,20 @@
     "hero": {
       "type": "hero-banner",
       "settings": {
-        "badge_text": "2026 Upgraded Pro Ergonomic Series",
+        "badge_text": "Official Ragaoon Ergonomics",
         "title": "The Ergonomic Gaming Chair Engineered for Zero-Strain Comfort."
       }
     },
     "product": {
       "type": "main-product",
       "settings": {
-        "title": "JECQCUPG Upgraded Ergonomic Gaming Chair"
+        "title": "Ragaoon Ergonomic Gaming Chair"
+      }
+    },
+    "video": {
+      "type": "video-showcase",
+      "settings": {
+        "title": "See the Ragaoon Ergonomic Chair in Motion"
       }
     },
     "recline": {
@@ -34,19 +40,19 @@
     "comparison": {
       "type": "comparison-table",
       "settings": {
-        "title": "See How JECQCUPG Crushes the Competition"
+        "title": "See How Ragaoon Crushes the Competition"
       }
     },
     "specs": {
       "type": "product-specs",
       "settings": {
-        "title": "Technical Specifications & Engineering Blueprint"
+        "title": "Ragaoon Specifications & Engineering Blueprint"
       }
     },
     "reviews": {
       "type": "reviews-testimonials",
       "settings": {
-        "title": "Loved by 15,000+ Gamers, Streamers & WFH Pros"
+        "title": "Loved by Gamers, Streamers & WFH Professionals"
       }
     },
     "faq": {
@@ -63,6 +69,7 @@
   "order": [
     "hero",
     "product",
+    "video",
     "recline",
     "ergonomics",
     "cushion",

@@ -1,7 +1,7 @@
 <div class="container cart-page-container">
   <div class="cart-page-header">
     <h1 class="cart-page-title">Shopping Cart</h1>
-    <a href="/" class="continue-link">&larr; Back to Flagship Chair</a>
+    <a href="/" class="continue-link">&larr; Back to Ragaoon Chair</a>
   </div>
 
   {% if cart.item_count == 0 %}
@@ -9,7 +9,7 @@
       <div class="empty-icon-wrap">{% render 'icon', name: 'cart' %}</div>
       <h2>Your cart is currently empty</h2>
       <p>Ready to upgrade to next-level ergonomic comfort?</p>
-      <a href="/" class="btn btn-primary btn-lg mt-3">View JECQCUPG Chair</a>
+      <a href="/" class="btn btn-primary btn-lg mt-3">View Ragaoon Chair ($89)</a>
     </div>
   {% else %}
     <form action="{{ routes.cart_url }}" method="post" id="cart" class="cart-page-form">
@@ -51,7 +51,7 @@
               <span class="summary-subtotal">{{ cart.total_price | money }}</span>
             </div>
             <div class="summary-row">
-              <span>Standard US Delivery</span>
+              <span>Standard Delivery</span>
               <span class="text-success font-bold">FREE</span>
             </div>
             <div class="summary-row">

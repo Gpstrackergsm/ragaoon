@@ -1,5 +1,5 @@
 {% comment %}
-  Sticky Add to Cart Bar for high conversion on mobile & desktop
+  Sticky Add to Cart Bar for Ragaoon Ergonomic Chair
 {% endcomment %}
 
 {% if settings.enable_sticky_atc %}
@@ -7,41 +7,38 @@
   <div class="sticky-atc-container">
     <div class="sticky-atc-product">
       <div class="sticky-atc-thumb">
-        <img id="StickyATCImage" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=160&auto=format&fit=crop&q=80" alt="JECQCUPG Ergonomic Chair">
+        <img id="StickyATCImage" src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958" alt="Ragaoon Ergonomic Chair">
       </div>
       <div class="sticky-atc-info">
-        <h4 class="sticky-atc-title">JECQCUPG Ergonomic Reclining Gaming Chair</h4>
+        <h4 class="sticky-atc-title">Ragaoon Ergonomic Gaming Chair</h4>
         <div class="sticky-atc-meta">
           <div class="star-rating-mini">
             {% for i in (1..5) %}
               {% render 'icon', name: 'star' %}
             {% endfor %}
-            <span class="rating-num">4.9 (1,840+ reviews)</span>
+            <span class="rating-num">4.9 &bull; Verified Buyers</span>
           </div>
-          <span class="sticky-badge">400 lbs Rated</span>
+          <span class="sticky-badge">150 kg (330 lbs) Load</span>
         </div>
       </div>
     </div>
 
     <div class="sticky-atc-actions">
       <div class="sticky-atc-price-wrap">
-        <span class="sticky-price" id="StickyPrice">$199.99</span>
-        <s class="sticky-compare-price" id="StickyComparePrice">$289.99</s>
-        <span class="sticky-save-badge">Save $90</span>
+        <span class="sticky-price" id="StickyPrice">$89.00 USD</span>
+        <s class="sticky-compare-price" id="StickyComparePrice">$139.00 USD</s>
+        <span class="sticky-save-badge">Save $50</span>
       </div>
 
       <div class="sticky-variant-select">
         <select id="StickyVariantPicker" class="variant-select-dropdown">
-          <option value="arctic-black" data-color="Arctic Black" selected>Arctic Black</option>
-          <option value="crimson-red" data-color="Crimson Red">Crimson Red</option>
-          <option value="jet-black" data-color="Jet Black">Jet Black</option>
-          <option value="arctic-white" data-color="Arctic White">Arctic White</option>
+          <option value="black" data-color="Black" selected>Black</option>
         </select>
       </div>
 
       <button id="StickyATCBtn" class="btn btn-primary sticky-btn-submit" type="button">
         {% render 'icon', name: 'cart' %}
-        <span>Add To Cart</span>
+        <span>Add To Cart &bull; $89</span>
       </button>
     </div>
   </div>

@@ -1,0 +1,70 @@
+<section class="video-showcase-section" id="VideoShowcase">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag">Watch in Action</span>
+      <h2 class="section-title">See the Ragaoon Ergonomic Chair in Motion</h2>
+      <p class="section-desc">
+        Watch how the 90°–135° recline, synchronized linkage armrests, and 51cm pocket spring seat adapt seamlessly to your body.
+      </p>
+    </div>
+
+    <div class="video-player-container">
+      <div class="video-wrapper">
+        <video 
+          id="RagaoonProductVideo" 
+          controls 
+          playsinline 
+          preload="metadata" 
+          poster="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958"
+          class="product-video-element"
+        >
+          <source src="https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/3554a565-ac88-4e18-a700-6a08b6127c77/default.jobtemplate.mp4.480.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="video-features-row">
+        <div class="video-feature-col">
+          <div class="vf-icon">🎥</div>
+          <div class="vf-text">
+            <strong>Full 90°–135° Smooth Recline</strong>
+            <span>Pivoting synchronized armrests keep arms aligned</span>
+          </div>
+        </div>
+        <div class="video-feature-col">
+          <div class="vf-icon">🛋️</div>
+          <div class="vf-text">
+            <strong>Pocket Springs + Resilient Foam</strong>
+            <span>Sofa-grade cushioning prevents hip & tailbone fatigue</span>
+          </div>
+        </div>
+        <div class="video-feature-col">
+          <div class="vf-icon">🛡️</div>
+          <div class="vf-text">
+            <strong>Reinforced Steel Construction</strong>
+            <span>Heavy-duty steel 5-star base rated for 150 kg (330 lbs)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "See the Ragaoon Ergonomic Chair in Motion"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Showcase"
+    }
+  ]
+}
+{% endschema %}

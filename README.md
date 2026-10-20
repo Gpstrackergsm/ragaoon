@@ -1,61 +1,61 @@
-# JECQCUPG Ergonomic Flagship Shopify Theme
+# Ragaoon Ergonomic Gaming Chair – Official Shopify Theme
 
-A high-converting Direct-to-Consumer (DTC) Shopify Online Store 2.0 theme purpose-built for the **JECQCUPG Upgraded Ergonomic Gaming & Executive Office Chair**.
+A high-converting Direct-to-Consumer (DTC) Shopify Online Store 2.0 theme built exclusively for **ragaoon** ([ragaoon.com.co](https://ragaoon.com.co/products/ragaoon-ergonomic-gaming-chair)).
 
-Inspired by industry leaders (Secretlab, Herman Miller, Razer Enki), this theme bridges the gap between high-performance gaming aesthetics and medical-grade orthopedic ergonomics.
+Designed for lasting comfort, flexible seating, and reliable support for gaming, working, studying, or relaxing.
 
 ---
 
 ## 🎯 Key Conversion Features
 
-1. **High-Impact Hero Section**
-   - Floating feature callouts: *Synchronized Linkage Armrests*, *16-Pocket Spring Core*, *SGS Class-4 Gas Cylinder (400 LBS)*.
-   - Dual CTAs with smooth scrolling anchors to purchase module.
-   - Real-time launch discount badge (-31% OFF).
+1. **High-Impact Hero Section (`sections/hero-banner.liquid`)**
+   - High-resolution hero imagery directly from Ragaoon.
+   - Live spec callouts: *Synchronized Armrests*, *Pocket Springs + Foam Core*, *Reinforced Steel Base (150 kg / 330 lbs)*.
+   - Dual CTAs with smooth scrolling to the purchase module and video demonstration.
 
-2. **Flagship Single-Product Purchase Engine (`sections/main-product.liquid`)**
-   - **Live Gallery**: Instant angle switching with thumbnail previews.
-   - **Variant Swatches**: Arctic Black, Crimson Red, Jet Black, Arctic White with real-time price & image updating.
-   - **Urgency Scarcity Bar**: Real-time stock meter (*"Only 6 units left"*) and live countdown timer.
-   - **Installment Financing Callout**: Klarna / Afterpay 4-interest-free payments indicator.
-   - **Quantity Stepper & Instant 1-Click Buy Now** checkout trigger.
+2. **Flagship Purchase Engine (`sections/main-product.liquid`)**
+   - **Official Pricing**: **$89.00 USD** (Compare at $139.00 USD — Save $50).
+   - **9 Real High-Res Product Angles**: Thumbnails for front view, 7-point ergonomic support, 51cm flat wingless seat, pocket springs + high-density foam cutaway, 90°–135° recline with synchronized armrests, 150 kg load steel base, exact dimensions, PU leather, and easy assembly.
+   - **Urgency & Scarcity**: Real-time batch inventory meter (*"Only 6 chairs remaining at $89.00"*) and live countdown timer for same-day dispatch.
+   - **Financing & 1-Click Buy**: Klarna / Afterpay 4-interest-free installments ($22.25/mo), quantity stepper, and instant 1-click checkout.
 
-3. **Interactive 90°–135° Recline Visualizer (`sections/recline-showcase.liquid`)**
+3. **Official Video Showcase (`sections/video-showcase.liquid`)**
+   - Integrated HTML5 video player streaming the official product demonstration video showcasing the smooth 90°–135° recline, synchronized armrests, and 51cm pocket spring seat in motion.
+
+4. **Interactive 90°–135° Recline Visualizer (`sections/recline-showcase.liquid`)**
    - Real-time interactive angle switching:
-     - **90°**: Peak Work & Competitive Alignment
+     - **90°**: Focused Work & Orthopedic Alignment
      - **110°**: Gaming & Casual Immersion
-     - **135°**: Zero-G Rest & Power Nap (retractable footrest deployed, linkage armrests auto-adjusted)
+     - **135°**: Zero-G Rest & Power Nap (synchronized armrests tilt automatically to keep elbows supported)
 
-4. **7-Point Orthopedic Anatomy Explorer (`sections/ergonomic-anatomy.liquid`)**
-   - Detailed breakdown across: Headrest, Shoulder Cradle, Lumbar Curve, Synchronized Armrests, 51cm Wingless Pocket Spring Cushion, Class-4 Gas Cylinder, and Retractable Footrest.
+5. **7-Point Orthopedic Anatomy Breakdown (`sections/ergonomic-anatomy.liquid`)**
+   - Deep dive into full-body relief: Headrest, Shoulder Support, Lumbar Curve, Synchronized Armrests, 51cm Flat Wingless Pocket Spring Cushion, and Reinforced Steel Construction.
 
-5. **Sofa-Grade Cushion Engineering (`sections/cushion-engineering.liquid`)**
-   - 4-layer cutaway breakdown: Breathable PU leather, 50D comfort foam, 16-pocket spring mattress matrix, alloy steel frame.
-   - Direct comparison against traditional slab foam chairs that sag after 2 hours.
+6. **Sofa-Grade Cushion Engineering (`sections/cushion-engineering.liquid`)**
+   - 4-layer cutaway breakdown: Breathable Black PU Leather, 50D Molded Foam, 16-Pocket Spring Core Mattress Matrix, Alloy Steel Foundation.
+   - Explains why cheap slab foam flattens in 3 months vs. how Ragaoon's pocket springs bounce back for years.
 
-6. **Direct-Response Feature Comparison Matrix (`sections/comparison-table.liquid`)**
-   - Side-by-side comparison: *JECQCUPG* vs. *Cheap Office Chairs* vs. *Overpriced $500+ Racing Chairs*.
+7. **Direct-Response Feature Matrix (`sections/comparison-table.liquid`)**
+   - Comparison: **Ragaoon ($89.00 USD)** vs. Generic Office Chairs ($130–$180) vs. Overpriced Racer Brands ($350–$500+).
 
-7. **Technical Specifications & Blueprint (`sections/product-specs.liquid`)**
-   - Complete dimensions, max weight (400 lbs / 181 kg), SGS & TUV certifications, materials, package contents.
+8. **Technical Specifications & Blueprint (`sections/product-specs.liquid`)**
+   - Exact specifications: Brand: Ragaoon, Color: Black, Seat Width: 51 cm, Max Weight: 150 kg (330 lbs), Dimensions: 55.3" D × 28.27" W × 28.28" H, Weight: 42.6 lbs.
 
-8. **Verified Social Proof & Reviews (`sections/reviews-testimonials.liquid`)**
-   - 4.9/5 star aggregate rating breakdown, verified buyer reviews with variant tags and customer feedback.
+9. **Verified Buyer Reviews (`sections/reviews-testimonials.liquid`)**
+   - 4.9/5 aggregate rating, verified buyer badges, and real customer testimonials.
 
-9. **Interactive FAQ Accordion (`sections/faq.liquid`)**
-   - Addresses common buyer hesitations: assembly time (15 mins), weight limit (400 lbs), linkage armrests, trial period, and delivery speed.
+10. **Buyer FAQ Accordion (`sections/faq.liquid`)**
+    - Answers to all key questions: assembly time (15 mins, tools included), 150 kg weight capacity, synchronized armrests, 51 cm flat seat cross-legged comfort, and 30-day trial.
 
-10. **Slide-Out AJAX Cart Drawer with Gamified Shipping Progress (`snippets/cart-drawer.liquid`)**
-    - Free shipping unlock progress bar.
-    - Frequently Added Together 1-click upsell (*Silent Rollerblade Caster Wheels*).
-    - Subtotal calculation, trust seals, and direct checkout button.
+11. **Slide-Out AJAX Cart Drawer (`snippets/cart-drawer.liquid`)**
+    - Free shipping unlock progress meter, rollerblade wheel upsell, subtotal calculation, and direct checkout.
 
-11. **Floating Sticky Add to Cart (`snippets/sticky-atc.liquid`)**
-    - Persistently slides up when user scrolls past the buy box, driving effortless impulse conversions on mobile and desktop.
+12. **Sticky Add-to-Cart Bar (`snippets/sticky-atc.liquid`)**
+    - Persistent sliding purchase bar with quick $89 add-to-cart on desktop and mobile.
 
 ---
 
-## 📁 Architecture & Shopify OS 2.0 Compliance
+## 📁 Architecture & File Layout
 
 ```
 ragaoon/
@@ -63,7 +63,7 @@ ragaoon/
 │   ├── theme.css             # Performance CSS (responsive, dark mode, zero bloated libraries)
 │   └── theme.js              # Vanilla JS for drawer, recline visualizer, variants, FAQs
 ├── config/
-│   ├── settings_schema.json  # Shopify theme customizer settings
+│   ├── settings_schema.json  # Theme settings customizer schema
 │   └── settings_data.json    # Default store colors & preferences
 ├── layout/
 │   └── theme.liquid          # Master layout with SEO & OpenGraph tags
@@ -74,6 +74,7 @@ ragaoon/
 │   ├── header.liquid
 │   ├── hero-banner.liquid
 │   ├── main-product.liquid
+│   ├── video-showcase.liquid
 │   ├── recline-showcase.liquid
 │   ├── ergonomic-anatomy.liquid
 │   ├── cushion-engineering.liquid
@@ -110,7 +111,7 @@ ragaoon/
    ```
 
 2. **Option B: ZIP Upload to Shopify Admin**
-   - Compress the repository contents into a `.zip` archive.
+   - Compress the repository into a `.zip` archive.
    - In Shopify Admin, navigate to **Online Store > Themes**.
    - Click **Add theme > Upload zip file**.
    - Click **Publish**!

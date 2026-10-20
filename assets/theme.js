@@ -1,5 +1,5 @@
 /**
- * JECQCUPG ERGONOMICS THEME JAVASCRIPT
+ * RAGAOON ERGONOMICS THEME JAVASCRIPT
  * High-performance, vanilla JavaScript interactions
  */
 
