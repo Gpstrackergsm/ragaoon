@@ -55,7 +55,7 @@
   "shopify": {
     "checkout": {
       "order_summary": {
-        "enter_shipping_address": "0$"
+        "enter_shipping_address": "$00.00"
       }
     }
   }
