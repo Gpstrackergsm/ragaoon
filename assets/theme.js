@@ -372,27 +372,59 @@ function initVariantSelector() {
   const productPrice = document.getElementById('ProductPrice');
   const mainImg = document.getElementById('MainProductImage');
   const stickyPrice = document.getElementById('StickyPrice');
+  const variantIdInput = document.getElementById('ProductVariantIdInput');
+  const stickyPicker = document.getElementById('StickyVariantPicker');
 
   if (swatches.length === 0) return;
 
+  function selectColor(colorName, triggerSwatch) {
+    swatches.forEach(s => {
+      const match = s.getAttribute('data-color') === colorName;
+      s.classList.toggle('active', match);
+      const radio = s.querySelector('input[type="radio"]');
+      if (radio) radio.checked = match;
+    });
+
+    if (selectedName) selectedName.textContent = colorName;
+
+    if (triggerSwatch) {
+      const price = triggerSwatch.getAttribute('data-price');
+      const img = triggerSwatch.getAttribute('data-img');
+      const varId = triggerSwatch.getAttribute('data-variant-id');
+
+      if (price) {
+        if (productPrice) productPrice.textContent = price;
+        if (stickyPrice) stickyPrice.textContent = price;
+      }
+      if (varId && variantIdInput) {
+        variantIdInput.value = varId;
+      }
+      if (img && mainImg && mainImg.getAttribute('data-variant-swapped') !== colorName) {
+        // Keep main image consistent
+      }
+    }
+
+    if (stickyPicker && stickyPicker.value !== colorName) {
+      stickyPicker.value = colorName;
+    }
+  }
+
   swatches.forEach(swatch => {
     swatch.addEventListener('click', () => {
-      swatches.forEach(s => s.classList.remove('active'));
-      swatch.classList.add('active');
-
       const color = swatch.getAttribute('data-color');
-      const price = swatch.getAttribute('data-price');
-      const img = swatch.getAttribute('data-img');
-
-      if (selectedName) selectedName.textContent = color;
-      if (productPrice) productPrice.textContent = price;
-      if (stickyPrice) stickyPrice.textContent = price;
-
-      if (img && mainImg) {
-        mainImg.src = img;
-      }
+      selectColor(color, swatch);
     });
   });
+
+  if (stickyPicker) {
+    stickyPicker.addEventListener('change', (e) => {
+      const chosenColor = e.target.value;
+      const targetSwatch = document.querySelector(`.swatch-option[data-color="${chosenColor}"]`);
+      if (targetSwatch) {
+        selectColor(chosenColor, targetSwatch);
+      }
+    });
+  }
 }
 
 /* ==========================================================================

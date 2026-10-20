@@ -171,18 +171,62 @@
       <div class="variant-selection-area">
         <div class="variant-header-row">
           <label class="variant-label">
-            Selected Color: <span class="selected-color-name" id="SelectedColorName">Black</span>
+            Selected Color: <strong class="selected-color-name" id="SelectedColorName">Black</strong>
           </label>
-          <span class="variant-availability">In Stock</span>
+          <span class="variant-availability">⚡ In Stock &bull; Ships in 24h</span>
         </div>
 
-        <div class="swatches-grid" style="grid-template-columns: 1fr;">
-          <label class="swatch-option active" data-color="Black" data-price="$89.00 USD" data-compare="$139.00 USD" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
-            <input type="radio" name="color_variant" value="Black" checked>
-            <span class="swatch-circle swatch-jet-black"></span>
-            <span class="swatch-text">Ragaoon Stealth Black &bull; High-Density PU Leather</span>
-            <span class="swatch-tag">Signature Edition</span>
-          </label>
+        <div class="swatches-grid">
+          {% if current_product.variants.size > 1 %}
+            {% for variant in current_product.variants %}
+              {% assign color_down = variant.title | downcase %}
+              <label class="swatch-option {% if forloop.first %}active{% endif %}" 
+                     data-color="{{ variant.title }}" 
+                     data-variant-id="{{ variant.id }}"
+                     data-price="{{ variant.price | money }}" 
+                     data-compare="{{ variant.compare_at_price | money }}"
+                     data-img="{{ variant.featured_image | default: current_product.featured_image | image_url: width: 1000 }}">
+                <input type="radio" name="color_variant" value="{{ variant.title }}" {% if forloop.first %}checked{% endif %}>
+                <span class="swatch-circle swatch-{{ color_down }}"></span>
+                <span class="swatch-text">{{ variant.title }}</span>
+                {% if forloop.first %}
+                  <span class="swatch-tag">Signature</span>
+                {% endif %}
+              </label>
+            {% endfor %}
+          {% else %}
+            <!-- 5 Official Ragaoon Colorways -->
+            <label class="swatch-option active" data-color="Black" data-variant-id="{{ current_variant_id }}" data-price="$89.00 USD" data-compare="$139.00 USD" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
+              <input type="radio" name="color_variant" value="Black" checked>
+              <span class="swatch-circle swatch-black"></span>
+              <span class="swatch-text">Black</span>
+              <span class="swatch-tag">Signature</span>
+            </label>
+
+            <label class="swatch-option" data-color="Green" data-variant-id="{{ current_variant_id }}" data-price="$89.00 USD" data-compare="$139.00 USD" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
+              <input type="radio" name="color_variant" value="Green">
+              <span class="swatch-circle swatch-green"></span>
+              <span class="swatch-text">Green</span>
+            </label>
+
+            <label class="swatch-option" data-color="Red" data-variant-id="{{ current_variant_id }}" data-price="$89.00 USD" data-compare="$139.00 USD" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
+              <input type="radio" name="color_variant" value="Red">
+              <span class="swatch-circle swatch-red"></span>
+              <span class="swatch-text">Red</span>
+            </label>
+
+            <label class="swatch-option" data-color="Blue" data-variant-id="{{ current_variant_id }}" data-price="$89.00 USD" data-compare="$139.00 USD" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
+              <input type="radio" name="color_variant" value="Blue">
+              <span class="swatch-circle swatch-blue"></span>
+              <span class="swatch-text">Blue</span>
+            </label>
+
+            <label class="swatch-option" data-color="Purple" data-variant-id="{{ current_variant_id }}" data-price="$89.00 USD" data-compare="$139.00 USD" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
+              <input type="radio" name="color_variant" value="Purple">
+              <span class="swatch-circle swatch-purple"></span>
+              <span class="swatch-text">Purple</span>
+            </label>
+          {% endif %}
         </div>
       </div>
 
