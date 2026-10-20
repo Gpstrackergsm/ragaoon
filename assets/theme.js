@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdownTimer();
   initQuantityStepper();
   initMobileMenu();
+  initLiveViewerCounter();
 });
 
 /* ==========================================================================
@@ -601,4 +602,22 @@ function initMobileMenu() {
       toggle.classList.remove('active');
     });
   });
+}
+
+/* ==========================================================================
+   10. REALISTIC LIVE VIEWER SOCIAL PROOF
+   ========================================================================== */
+function initLiveViewerCounter() {
+  const viewerEl = document.getElementById('LiveViewerCount');
+  if (!viewerEl) return;
+
+  let currentCount = parseInt(viewerEl.textContent, 10) || 23;
+  function updateCount() {
+    const delta = Math.floor(Math.random() * 5) - 2; // -2 to +2
+    currentCount = Math.max(17, Math.min(31, currentCount + delta));
+    viewerEl.textContent = currentCount;
+    const nextInterval = Math.floor(Math.random() * 5000) + 6000; // 6 to 11s
+    setTimeout(updateCount, nextInterval);
+  }
+  setTimeout(updateCount, 7000);
 }

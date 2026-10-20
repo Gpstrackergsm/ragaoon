@@ -2384,3 +2384,96 @@ button, input, select {
 @media (max-width: 868px) {
   .video-features-row { grid-template-columns: 1fr; }
 }
+
+/* CRO Conversion Drivers */
+.live-activity-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: #f1f5f9;
+  margin-bottom: 16px;
+}
+.live-activity-bar strong {
+  color: #10b981;
+}
+
+.pulse-dot-green {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.estimated-delivery-callout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--color-border);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  margin-top: 10px;
+}
+.estimated-delivery-callout svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+.estimated-delivery-callout strong {
+  color: #ffffff;
+}
+
+.secure-checkout-strip {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.secure-checkout-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+.secure-checkout-title svg {
+  color: #10b981;
+  width: 14px;
+  height: 14px;
+}
+.secure-checkout-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pay-chip {
+  background: #181e2b;
+  border: 1px solid #2d3748;
+  color: #e2e8f0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
