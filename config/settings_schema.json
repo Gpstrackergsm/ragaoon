@@ -8,6 +8,17 @@
     "theme_support_url": "https://ragaoon.com.co"
   },
   {
+    "name": "Logo & Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px. Fallback is the Ragaoon vector icon."
+      }
+    ]
+  },
+  {
     "name": "Colors & Aesthetics",
     "settings": [
       {
