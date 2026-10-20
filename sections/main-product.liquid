@@ -66,21 +66,21 @@
 
       <!-- Trust Mini Badges below gallery -->
       <div class="gallery-trust-strip">
-        <div class="trust-mini-item">
+        <div class="trust-mini-item" data-policy-trigger="shipping" style="cursor: pointer;" title="Click to view Shipping Policy">
           {% render 'icon', name: 'truck' %}
           <div>
             <strong>Fast Express Delivery</strong>
-            <small>Direct from warehouse</small>
+            <small>Direct from warehouse &bull; 2-4 Days</small>
           </div>
         </div>
-        <div class="trust-mini-item">
+        <div class="trust-mini-item" data-policy-trigger="refund" style="cursor: pointer;" title="Click to view 30-Day Guarantee">
           {% render 'icon', name: 'refresh' %}
           <div>
             <strong>30-Day Risk-Free Trial</strong>
             <small>Love it or 100% money back</small>
           </div>
         </div>
-        <div class="trust-mini-item">
+        <div class="trust-mini-item" data-policy-trigger="warranty" style="cursor: pointer;" title="Click to view 3-Year Warranty">
           {% render 'icon', name: 'shield' %}
           <div>
             <strong>3-Year Frame Warranty</strong>
@@ -154,7 +154,7 @@
         <div class="scarcity-timer">
           <span>Order within <strong id="CountdownTimer">03h 42m 19s</strong> for same-day dispatch.</span>
         </div>
-        <div class="estimated-delivery-callout">
+        <div class="estimated-delivery-callout" data-policy-trigger="shipping" style="cursor: pointer;" title="Click to view full Shipping &amp; Delivery Policy">
           {% render 'icon', name: 'truck' %}
           <span>Estimated Delivery: <strong>2 &ndash; 4 Business Days</strong> &bull; Free Shipping Included</span>
         </div>
@@ -202,7 +202,7 @@
           <span>Instant Checkout (1-Click)</span>
         </button>
 
-        <div class="secure-checkout-strip">
+        <div class="secure-checkout-strip" data-policy-trigger="privacy" style="cursor: pointer;" title="Click to view Security &amp; Privacy Policy">
           <div class="secure-checkout-title">
             {% render 'icon', name: 'shield' %}
             <span>Guaranteed Safe &amp; Secure 256-Bit Checkout</span>

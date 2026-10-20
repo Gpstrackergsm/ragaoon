@@ -2477,3 +2477,244 @@ button, input, select {
   padding: 2px 8px;
   border-radius: 4px;
 }
+
+/* ==========================================================================
+   POLICY MODAL DRAWER & TABS
+   ========================================================================== */
+.policy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.policy-modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.policy-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.policy-modal-dialog {
+  position: relative;
+  z-index: 2;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.policy-modal-overlay.active .policy-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.policy-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: #0f131a;
+}
+
+.policy-modal-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.policy-modal-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+.policy-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, background 0.2s;
+}
+
+.policy-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.policy-modal-tabs {
+  display: flex;
+  background: #141a24;
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.policy-modal-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.policy-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.policy-tab-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.policy-tab-btn:hover {
+  color: var(--color-text-light);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.policy-tab-btn.active {
+  color: #fff;
+  background: rgba(230, 57, 70, 0.08);
+  border-bottom-color: var(--color-primary);
+}
+
+.policy-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.policy-modal-body h4 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.policy-modal-body h5 {
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.policy-modal-body .lead-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.policy-grid-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 18px 0;
+}
+
+@media (max-width: 600px) {
+  .policy-grid-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+.highlight-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.highlight-item strong {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.highlight-item span {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+.policy-ordered-list {
+  padding-left: 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.policy-ordered-list li {
+  margin-bottom: 8px;
+}
+
+.policy-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border);
+  background: #0f131a;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .policy-modal-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .policy-modal-footer .btn {
+    width: 100%;
+  }
+}
+
+.policy-footer-price .label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.policy-footer-price .price {
+  font-size: 1.2rem;
+  color: #fff;
+}
+

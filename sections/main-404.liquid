@@ -1,9 +1,51 @@
-<div class="container text-center py-5">
-  <div class="error-404-box">
-    <span class="error-code">404</span>
-    <h1 class="error-title">Page Not Found</h1>
-    <p class="error-desc">The ergonomic chair page you are looking for might have been moved or doesn't exist.</p>
-    <a href="/" class="btn btn-primary btn-lg mt-4">Return to Homepage</a>
+<div class="container py-5 text-center">
+  <div class="error-404-box" style="max-width: 720px; margin: 0 auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 48px 24px;">
+    <span class="error-code" style="font-size: 3.5rem; font-weight: 800; color: var(--color-primary); line-height: 1;">404</span>
+    <h1 class="error-title" style="font-size: 2rem; margin: 16px 0 10px 0;">Looking for Ragaoon Ergonomics?</h1>
+    <p class="error-desc text-muted" style="font-size: 1.05rem; max-width: 540px; margin: 0 auto 28px auto;">
+      The specific link you requested is unavailable, but our official store policies and full ergonomic chair collection are ready below.
+    </p>
+
+    <!-- Quick Policy Shortcuts -->
+    <div class="error-policy-shortcuts" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 32px;">
+      <button type="button" class="btn btn-outline btn-sm" data-policy-trigger="shipping">
+        {% render 'icon', name: 'truck' %}
+        <span>Shipping Policy (2-4 Days)</span>
+      </button>
+      <button type="button" class="btn btn-outline btn-sm" data-policy-trigger="refund">
+        {% render 'icon', name: 'refresh' %}
+        <span>30-Day Return Trial</span>
+      </button>
+      <button type="button" class="btn btn-outline btn-sm" data-policy-trigger="warranty">
+        {% render 'icon', name: 'shield' %}
+        <span>3-Year Warranty</span>
+      </button>
+      <button type="button" class="btn btn-outline btn-sm" data-policy-trigger="privacy">
+        {% render 'icon', name: 'lock' %}
+        <span>256-Bit SSL Security</span>
+      </button>
+    </div>
+
+    <!-- Product Feature Box -->
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 24px; text-align: left; max-width: 500px; margin: 0 auto 28px auto; display: flex; align-items: center; gap: 20px;">
+      <img src="https://ragaoon.com.co/cdn/shop/files/714hLp6p8nL._AC_SL1500.jpg?v=1774390623" alt="Ragaoon Ergonomic Gaming Chair" style="width: 80px; height: 80px; object-fit: contain; background: #0a0c10; border-radius: var(--radius-sm); padding: 4px;" loading="lazy">
+      <div>
+        <h4 style="margin: 0 0 4px 0; font-size: 1.05rem; color: var(--color-text-light);">Ragaoon Ergonomic Chair</h4>
+        <p style="margin: 0 0 6px 0; font-size: 0.85rem; color: var(--color-text-muted);">51 cm Pocket Spring Seat &bull; 90&deg;&ndash;135&deg; Recline</p>
+        <span style="font-weight: 700; color: var(--color-primary); font-size: 1.1rem;">$89.00 USD</span>
+        <s style="color: var(--color-text-muted); font-size: 0.85rem; margin-left: 6px;">$139.00 USD</s>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+      <a href="{{ routes.root_url }}#ProductOverview" class="btn btn-primary btn-lg">
+        <span>Order Ragaoon Chair - $89.00 USD</span>
+        {% render 'icon', name: 'arrow-right' %}
+      </a>
+      <a href="{{ routes.root_url }}" class="btn btn-outline btn-lg">
+        <span>Return to Homepage</span>
+      </a>
+    </div>
   </div>
 </div>
 

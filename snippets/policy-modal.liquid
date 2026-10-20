@@ -1,0 +1,167 @@
+<!-- Interactive Policy & Trust Modal -->
+<div id="PolicyModal" class="policy-modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="PolicyModalTitle">
+  <div class="policy-modal-backdrop" data-policy-close></div>
+  <div class="policy-modal-dialog">
+    <div class="policy-modal-header">
+      <div class="policy-modal-title-wrap">
+        <span class="policy-modal-badge">Official Store Guarantee</span>
+        <h3 id="PolicyModalTitle" class="policy-modal-title">Ragaoon Store Policies</h3>
+      </div>
+      <button type="button" class="policy-modal-close" data-policy-close aria-label="Close policy modal">&times;</button>
+    </div>
+
+    <!-- Policy Tabs -->
+    <div class="policy-modal-tabs" role="tablist">
+      <button type="button" class="policy-tab-btn active" data-policy-tab="shipping" role="tab" aria-selected="true">
+        {% render 'icon', name: 'truck' %}
+        <span>Shipping Policy</span>
+      </button>
+      <button type="button" class="policy-tab-btn" data-policy-tab="refund" role="tab" aria-selected="false">
+        {% render 'icon', name: 'refresh' %}
+        <span>30-Day Returns</span>
+      </button>
+      <button type="button" class="policy-tab-btn" data-policy-tab="warranty" role="tab" aria-selected="false">
+        {% render 'icon', name: 'shield' %}
+        <span>3-Year Warranty</span>
+      </button>
+      <button type="button" class="policy-tab-btn" data-policy-tab="privacy" role="tab" aria-selected="false">
+        {% render 'icon', name: 'lock' %}
+        <span>Privacy &amp; Security</span>
+      </button>
+    </div>
+
+    <!-- Policy Content Panels -->
+    <div class="policy-modal-body">
+      <!-- 1. Shipping Policy -->
+      <div class="policy-panel active" id="PolicyPanel-shipping" role="tabpanel">
+        <h4>Fast, Free Tracked Delivery</h4>
+        <p class="lead-text">Every Ragaoon Ergonomic Gaming Chair ships directly from our regional fulfillment centers to guarantee prompt, secure delivery to your doorstep.</p>
+
+        <div class="policy-grid-highlights">
+          <div class="highlight-item">
+            <strong>🚀 24-Hour Dispatch</strong>
+            <span>Orders placed before 2:00 PM EST ship the same business day (excluding weekends and federal holidays).</span>
+          </div>
+          <div class="highlight-item">
+            <strong>📦 2 &ndash; 4 Business Days</strong>
+            <span>Standard transit time across the continental United States via FedEx Ground / UPS.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🎉 100% Free Shipping</strong>
+            <span>All orders above $75.00 receive complimentary door-to-door delivery with no handling fees.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🔍 Real-Time Tracking</strong>
+            <span>A carrier tracking link is emailed and texted to you the moment your chair leaves our warehouse.</span>
+          </div>
+        </div>
+
+        <h5 class="mt-4">Packaging &amp; Protection</h5>
+        <p>Your Ragaoon chair is packed inside a double-walled reinforced export carton with custom-molded high-density foam buffers. All components, precision bolts, ergonomic lumbar cushion, and hex assembly tools are securely organized in blister packaging for effortless 15-minute setup.</p>
+
+        <h5>Damaged or Lost in Transit</h5>
+        <p>In the rare event of transit damage or courier delay, our customer care team will dispatch an expedited replacement immediately at zero cost. Simply contact our support desk with your order number.</p>
+      </div>
+
+      <!-- 2. Refund & Trial Policy -->
+      <div class="policy-panel" id="PolicyPanel-refund" role="tabpanel" style="display: none;">
+        <h4>30-Day In-Home Risk-Free Trial</h4>
+        <p class="lead-text">We want you to experience genuine ergonomic relief without pressure. Assemble the Ragaoon chair, use it at your desk, game, and relax for 30 full days.</p>
+
+        <div class="policy-grid-highlights">
+          <div class="highlight-item">
+            <strong>🛡️ 30 Full Days</strong>
+            <span>Take a month to test the 51 cm pocket spring seat and 90°–135° recline in your daily routine.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>💯 100% Money-Back</strong>
+            <span>If you aren't completely thrilled with the comfort and support, receive a full refund.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🚫 Zero Restocking Fees</strong>
+            <span>We never penalize you for trying out our ergonomic seating. No hidden fees or deductions.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🤝 Hassle-Free Process</strong>
+            <span>Reach out to support, receive prepaid return instructions, and send the unit back.</span>
+          </div>
+        </div>
+
+        <h5 class="mt-4">How to Initiate a Return</h5>
+        <ol class="policy-ordered-list">
+          <li>Email our support team with your order confirmation number within 30 days of delivery.</li>
+          <li>Our concierge will verify your details and issue an authorized return merchandise authorization (RMA) and return label.</li>
+          <li>Once the returned item is inspected at our warehouse, your 100% refund will be credited directly to your original payment method within 2&ndash;5 business days.</li>
+        </ol>
+      </div>
+
+      <!-- 3. Warranty Information -->
+      <div class="policy-panel" id="PolicyPanel-warranty" role="tabpanel" style="display: none;">
+        <h4>3-Year Structural Hardware Warranty</h4>
+        <p class="lead-text">Ragaoon chairs are engineered for heavy daily use and built around an industrial-grade steel frame tested to exceed BIFMA &amp; SGS safety standards.</p>
+
+        <div class="policy-grid-highlights">
+          <div class="highlight-item">
+            <strong>🔩 Integrated Steel Frame</strong>
+            <span>Full 3-year structural guarantee against frame cracking, bending, or weld failure.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>⚡ SGS Class-3 Gas Cylinder</strong>
+            <span>Certified explosion-proof hydraulic gas lift rated for up to 150 kg (330 lbs) capacity.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🔄 Recline Gear Mechanism</strong>
+            <span>Heavy-duty steel tooth recliner mechanism locking solidly from 90° to 135°.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🛞 Base &amp; Polyurethane Casters</strong>
+            <span>Reinforced 5-star spider base and 360° smooth-rolling casters covered under warranty.</span>
+          </div>
+        </div>
+
+        <h5 class="mt-4">Fast Free Replacement Parts</h5>
+        <p>If any covered component shows signs of manufacturing defect or wear under normal domestic/office usage within 3 years, Ragaoon will ship you brand new replacement hardware free of charge with express tracking.</p>
+      </div>
+
+      <!-- 4. Privacy & Security -->
+      <div class="policy-panel" id="PolicyPanel-privacy" role="tabpanel" style="display: none;">
+        <h4>Bank-Grade 256-Bit SSL Security &amp; Privacy</h4>
+        <p class="lead-text">Your privacy, personal data, and payment information are protected under the most stringent digital security standards.</p>
+
+        <div class="policy-grid-highlights">
+          <div class="highlight-item">
+            <strong>🔒 256-Bit SSL Encryption</strong>
+            <span>Every bit of checkout data is encrypted using end-to-end RSA 2048-bit / SHA-256 protocols.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>💳 PCI-DSS Level 1 Certified</strong>
+            <span>Payments are processed directly via Shopify Payments, Stripe, Visa, Apple Pay, and Google Pay.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🚫 Zero Payment Storage</strong>
+            <span>Ragaoon never sees, handles, or stores your raw credit card numbers or CVV codes.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>🛡️ Strict Data Privacy</strong>
+            <span>We never sell, rent, or trade your email address or personal details to third-party ad networks.</span>
+          </div>
+        </div>
+
+        <h5 class="mt-4">Compliance with Global Privacy Standards</h5>
+        <p>We comply fully with applicable United States Consumer Privacy laws and international GDPR standards. You may request access to or deletion of your order contact records at any time by contacting our data protection officer.</p>
+      </div>
+    </div>
+
+    <!-- Modal Footer CTA -->
+    <div class="policy-modal-footer">
+      <div class="policy-footer-price">
+        <span class="label">Ragaoon Ergonomic Gaming Chair</span>
+        <span class="price"><strong>$89.00 USD</strong> <s style="color: var(--color-text-muted); font-size: 0.9rem; margin-left: 6px;">$139.00</s></span>
+      </div>
+      <button type="button" class="btn btn-primary btn-lg" data-policy-order-btn>
+        <span>Claim Your Ragaoon Chair ($89)</span>
+        {% render 'icon', name: 'arrow-right' %}
+      </button>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuantityStepper();
   initMobileMenu();
   initLiveViewerCounter();
+  initPolicyModal();
 });
 
 /* ==========================================================================
@@ -621,3 +622,95 @@ function initLiveViewerCounter() {
   }
   setTimeout(updateCount, 7000);
 }
+
+/* ==========================================================================
+   11. INTERACTIVE POLICY & TRUST MODAL
+   ========================================================================== */
+function initPolicyModal() {
+  const modal = document.getElementById('PolicyModal');
+  if (!modal) return;
+
+  const tabButtons = modal.querySelectorAll('[data-policy-tab]');
+  const panels = modal.querySelectorAll('.policy-panel');
+  const closeTriggers = modal.querySelectorAll('[data-policy-close]');
+  const orderBtn = modal.querySelector('[data-policy-order-btn]');
+
+  function switchTab(tabKey) {
+    tabButtons.forEach(btn => {
+      const match = btn.getAttribute('data-policy-tab') === tabKey;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+
+    panels.forEach(panel => {
+      if (panel.id === `PolicyPanel-${tabKey}`) {
+        panel.style.display = 'block';
+        panel.classList.add('active');
+      } else {
+        panel.style.display = 'none';
+        panel.classList.remove('active');
+      }
+    });
+  }
+
+  function openModal(defaultTab = 'shipping') {
+    switchTab(defaultTab);
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Bind all triggers across page (footer, 404, badges)
+  document.querySelectorAll('[data-policy-trigger]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tab = trigger.getAttribute('data-policy-trigger') || 'shipping';
+      openModal(tab);
+    });
+  });
+
+  // Tab switching inside modal
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tabKey = btn.getAttribute('data-policy-tab');
+      switchTab(tabKey);
+    });
+  });
+
+  // Close triggers (X button and backdrop)
+  closeTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeModal();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Order CTA in modal footer
+  if (orderBtn) {
+    orderBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeModal();
+      const target = document.getElementById('ProductOverview') || document.querySelector('.main-product-section');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.location.href = '/#ProductOverview';
+      }
+    });
+  }
+}
+
