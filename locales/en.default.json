@@ -56,6 +56,9 @@
     "checkout": {
       "order_summary": {
         "enter_shipping_address": "$00.00"
+      },
+      "shipping_errors": {
+        "empty_state": "Fast Delivery"
       }
     }
   }
