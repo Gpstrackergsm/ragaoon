@@ -329,10 +329,44 @@ button, input, select {
   border-radius: 2px;
 }
 
+#ProductOverview, #VideoShowcase, #ReclineShowcase, #Ergonomics, #SpringSeat, #Comparison, #Specs, #Reviews, #FAQ {
+  scroll-margin-top: 85px;
+}
+
 @media (max-width: 992px) {
-  .header-nav { display: none; }
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0d1117;
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+  }
+  .header-nav.mobile-nav-open {
+    display: block !important;
+    animation: fadeInDownNav 0.25s ease forwards;
+  }
+  .header-nav .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .header-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 6px 0;
+    display: block;
+    width: 100%;
+  }
   .mobile-menu-toggle { display: flex; }
   .header-cta-btn { display: none; }
+}
+
+@keyframes fadeInDownNav {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Hero Banner */
@@ -443,6 +477,10 @@ button, input, select {
 
 .hero-chair-img {
   width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  background: #111622;
+  padding: 16px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
@@ -503,11 +541,16 @@ button, input, select {
 
 .product-gallery-main {
   position: relative;
-  background: var(--color-bg-dark);
+  background: #111622;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  min-height: 480px;
 }
 
 .gallery-badge-floating {
@@ -539,20 +582,20 @@ button, input, select {
 
 .gallery-active-img {
   width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  transition: opacity 0.3s ease;
+  max-height: 520px;
+  object-fit: contain;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .product-gallery-thumbs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   margin-top: 16px;
 }
 
 .thumb-btn {
-  background: var(--color-bg-dark);
+  background: #111622;
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 6px;
@@ -565,8 +608,10 @@ button, input, select {
 }
 .thumb-btn img {
   border-radius: var(--radius-sm);
+  width: 100%;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  object-fit: contain;
+  background: #181e2b;
 }
 .thumb-btn span {
   font-size: 0.72rem;
@@ -1761,7 +1806,7 @@ button, input, select {
   line-height: 1.7;
 }
 .faq-item.active .faq-answer {
-  max-height: 300px;
+  max-height: 800px;
   padding-bottom: 24px;
 }
 .faq-answer strong { color: #ffffff; }

@@ -13,20 +13,20 @@
         </h3>
         <span class="cart-drawer-count" data-cart-count>{{ cart.item_count }}</span>
       </div>
-      <button class="cart-drawer-close" data-drawer-close aria-label="Close cart">
+      <button class="cart-drawer-close" data-drawer-close aria-label="Close cart" type="button">
         {% render 'icon', name: 'close' %}
       </button>
     </div>
 
-    <!-- Free Shipping Goal Progress Bar -->
+    <!-- Free Shipping Goal Progress Bar ($75 Threshold) -->
     <div class="cart-drawer-shipping-meter">
       {% assign threshold = settings.free_shipping_threshold | default: 75 | times: 100 %}
       {% assign remaining = threshold | minus: cart.total_price %}
       <div class="shipping-meter-text" data-shipping-meter-text>
         {% if cart.total_price >= threshold %}
-          <span class="shipping-unlocked">🎉 <strong>CONGRATULATIONS!</strong> You've unlocked <strong>FREE Express Shipping</strong>!</span>
+          <span class="shipping-unlocked">🎉 <strong>CONGRATULATIONS!</strong> You unlocked <strong>FREE Express Delivery</strong>!</span>
         {% else %}
-          <span>Add <strong>{{ remaining | money }}</strong> more to unlock <strong>FREE Express Shipping</strong>!</span>
+          <span>Add <strong>{{ remaining | money }}</strong> more to unlock <strong>FREE Express Delivery</strong>!</span>
         {% endif %}
       </div>
       <div class="shipping-meter-bar">
@@ -36,7 +36,7 @@
       </div>
     </div>
 
-    <!-- Items List -->
+    <!-- Items List (Dynamically updated via theme.js) -->
     <div class="cart-drawer-items-wrap" data-cart-items-container>
       {% if cart.item_count == 0 %}
         <div class="cart-drawer-empty">
@@ -44,8 +44,8 @@
             {% render 'icon', name: 'cart' %}
           </div>
           <h4>Your cart is empty</h4>
-          <p>Don't miss out on next-gen ergonomic comfort.</p>
-          <button class="btn btn-primary" data-drawer-close>Explore Flagship Chair</button>
+          <p>Experience the 51cm pocket spring ergonomic comfort.</p>
+          <button class="btn btn-primary" data-drawer-close type="button">Explore Ragaoon Chair ($89)</button>
         </div>
       {% else %}
         <div class="cart-drawer-items">
@@ -55,7 +55,7 @@
                 {% if item.image %}
                   <img src="{{ item.image | image_url: width: 140 }}" alt="{{ item.title | escape }}" loading="lazy">
                 {% else %}
-                  <div class="cart-item-placeholder">💺</div>
+                  <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958" alt="Ragaoon Chair" loading="lazy">
                 {% endif %}
               </div>
               <div class="cart-item-details">
@@ -71,11 +71,11 @@
                 </div>
                 <div class="cart-item-qty-actions">
                   <div class="qty-control">
-                    <button class="qty-btn" data-cart-update-qty="{{ item.quantity | minus: 1 }}" data-key="{{ item.key }}">-</button>
-                    <input type="number" class="qty-input" value="{{ item.quantity }}" readonly>
-                    <button class="qty-btn" data-cart-update-qty="{{ item.quantity | plus: 1 }}" data-key="{{ item.key }}">+</button>
+                    <button class="qty-btn" type="button" data-cart-update-qty="{{ item.quantity | minus: 1 }}" data-key="{{ item.key }}">-</button>
+                    <input type="number" class="qty-input" value="{{ item.quantity }}" readonly aria-label="Quantity">
+                    <button class="qty-btn" type="button" data-cart-update-qty="{{ item.quantity | plus: 1 }}" data-key="{{ item.key }}">+</button>
                   </div>
-                  <button class="cart-item-remove" data-cart-remove="{{ item.key }}" aria-label="Remove item">Remove</button>
+                  <button class="cart-item-remove" type="button" data-cart-remove="{{ item.key }}" aria-label="Remove item">Remove</button>
                 </div>
               </div>
             </div>
@@ -93,23 +93,25 @@
           <span class="upsell-title">Silent Rollerblade Caster Wheels (Set of 5)</span>
           <span class="upsell-price">$29.99 <s class="text-muted">$49.99</s></span>
         </div>
-        <button class="btn btn-sm btn-outline upsell-btn" data-quick-upsell>+ Add</button>
+        <button class="btn btn-sm btn-outline upsell-btn" data-quick-upsell type="button">+ Add</button>
       </div>
     </div>
 
-    <!-- Drawer Footer -->
+    <!-- Drawer Footer & Checkout -->
     <div class="cart-drawer-footer">
       <div class="cart-drawer-subtotal-row">
         <span>Subtotal</span>
         <span class="cart-drawer-subtotal" data-cart-subtotal>{{ cart.total_price | money }}</span>
       </div>
       <p class="cart-drawer-taxes-note">Taxes & shipping calculated at checkout. 30-Day Risk-Free Trial included.</p>
-      <form action="{{ routes.cart_url }}" method="post" id="cart-drawer-form">
-        <button type="submit" name="checkout" class="btn btn-primary btn-block btn-lg checkout-btn">
-          <span>Lock In Deal & Checkout</span>
+      
+      <div class="cart-drawer-checkout-wrap">
+        <a href="/checkout" class="btn btn-primary btn-block btn-lg checkout-btn" id="CartDrawerCheckoutBtn">
+          <span>Proceed to Secure Checkout</span>
           {% render 'icon', name: 'arrow-right' %}
-        </button>
-      </form>
+        </a>
+      </div>
+
       <div class="cart-guarantee-mini">
         <span>{% render 'icon', name: 'shield' %} 256-Bit SSL Encrypted Checkout</span>
         <span>{% render 'icon', name: 'refresh' %} 30-Day Money Back Guarantee</span>

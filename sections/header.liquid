@@ -1,7 +1,7 @@
 <header class="site-header" id="SiteHeader">
   <div class="header-container">
     <div class="header-logo-wrap">
-      <a href="/" class="header-logo">
+      <a href="{{ routes.root_url }}" class="header-logo">
         <span class="logo-mark">ragaoon</span>
         <span class="logo-sub">ERGONOMICS</span>
       </a>
@@ -9,28 +9,28 @@
 
     <nav class="header-nav" id="HeaderNav">
       <ul class="nav-links">
-        <li><a href="#ProductOverview" class="nav-link">The Chair</a></li>
-        <li><a href="#VideoShowcase" class="nav-link">Video</a></li>
-        <li><a href="#ReclineShowcase" class="nav-link">90°–135° Recline</a></li>
-        <li><a href="#Ergonomics" class="nav-link">7-Point Support</a></li>
-        <li><a href="#SpringSeat" class="nav-link">Pocket Springs</a></li>
-        <li><a href="#Specs" class="nav-link">Specs</a></li>
-        <li><a href="#Reviews" class="nav-link">Reviews</a></li>
-        <li><a href="#FAQ" class="nav-link">FAQ</a></li>
+        <li><a href="{{ routes.root_url }}#ProductOverview" class="nav-link">The Chair</a></li>
+        <li><a href="{{ routes.root_url }}#VideoShowcase" class="nav-link">Video</a></li>
+        <li><a href="{{ routes.root_url }}#ReclineShowcase" class="nav-link">90°–135° Recline</a></li>
+        <li><a href="{{ routes.root_url }}#Ergonomics" class="nav-link">7-Point Support</a></li>
+        <li><a href="{{ routes.root_url }}#SpringSeat" class="nav-link">Pocket Springs</a></li>
+        <li><a href="{{ routes.root_url }}#Specs" class="nav-link">Specs</a></li>
+        <li><a href="{{ routes.root_url }}#Reviews" class="nav-link">Reviews</a></li>
+        <li><a href="{{ routes.root_url }}#FAQ" class="nav-link">FAQ</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <button class="cart-trigger-btn" data-drawer-open aria-label="Open cart">
+      <button class="cart-trigger-btn" data-drawer-open aria-label="Open cart" type="button">
         {% render 'icon', name: 'cart' %}
         <span class="cart-badge-count" data-cart-count>{{ cart.item_count }}</span>
       </button>
 
-      <a href="#ProductOverview" class="btn btn-sm btn-primary header-cta-btn">
+      <a href="{{ routes.root_url }}#ProductOverview" class="btn btn-sm btn-primary header-cta-btn">
         <span>Order Ragaoon ($89)</span>
       </a>
 
-      <button class="mobile-menu-toggle" id="MobileMenuToggle" aria-label="Open Navigation">
+      <button class="mobile-menu-toggle" id="MobileMenuToggle" aria-label="Open Navigation" type="button">
         <span></span>
         <span></span>
         <span></span>

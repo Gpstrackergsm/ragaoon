@@ -1,3 +1,17 @@
+{%- assign current_product = all_products[section.settings.featured_product] -%}
+{%- if current_product == empty or current_product == blank -%}
+  {%- assign current_product = all_products['ragaoon-ergonomic-gaming-chair'] -%}
+{%- endif -%}
+{%- if current_product == empty or current_product == blank -%}
+  {%- assign current_product = product -%}
+{%- endif -%}
+{%- if current_product == empty or current_product == blank -%}
+  {%- assign current_product = collections.all.products.first -%}
+{%- endif -%}
+
+{%- assign current_variant = current_product.selected_or_first_available_variant -%}
+{%- assign current_variant_id = current_variant.id | default: 67868873621716 -%}
+
 <section class="product-section" id="ProductOverview">
   <div class="container product-container">
     <!-- Gallery Column -->
@@ -12,39 +26,39 @@
 
       <!-- 9 Real Product Image Thumbnails from ragaoon.com.co -->
       <div class="product-gallery-thumbs" id="GalleryThumbs">
-        <button class="thumb-btn active" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
+        <button type="button" class="thumb-btn active" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.32.png?v=1792454958" alt="Front Ergonomic View">
           <span>Main</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.55.png?v=1792454958">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.55.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.07.55.png?v=1792454958" alt="7-Point Support">
           <span>7-Point</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.02.png?v=1792454958">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.02.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.02.png?v=1792454958" alt="51cm Wingless Seat">
           <span>51cm Seat</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.11.png?v=1792454957">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.11.png?v=1792454957">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.11.png?v=1792454957" alt="Pocket Springs + Foam">
           <span>Springs</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.20.png?v=1792454958">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.20.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.20.png?v=1792454958" alt="90-135 Recline & Armrests">
           <span>Recline</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.27.png?v=1792454958">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.27.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.27.png?v=1792454958" alt="Steel Frame 150kg Load">
           <span>Steel Base</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.35.png?v=1792454958">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.35.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.35.png?v=1792454958" alt="Dimensions">
           <span>Dimensions</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.42.png?v=1792454958">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.42.png?v=1792454958">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.42.png?v=1792454958" alt="PU Leather Detail">
           <span>PU Leather</span>
         </button>
-        <button class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.49.png?v=1792454957">
+        <button type="button" class="thumb-btn" data-img="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.49.png?v=1792454957">
           <img src="https://cdn.shopify.com/s/files/1/0863/8509/8964/files/Screenshot2026-10-20at00.08.49.png?v=1792454957" alt="Easy Assembly">
           <span>Assembly</span>
         </button>
@@ -90,7 +104,7 @@
       </div>
 
       <h1 class="product-page-title">
-        Ragaoon Ergonomic Gaming Chair
+        {{ current_product.title | default: "Ragaoon Ergonomic Gaming Chair" }}
       </h1>
       <p class="product-page-subtitle">
         Upgrade your gaming setup or workspace with the Ragaoon Ergonomic Gaming Chair, designed for lasting comfort, flexible seating, and reliable support. Featuring a spacious 51 cm wingless seat, premium-style pocket spring cushioning, and an adjustable 90°–135° reclining backrest.
@@ -99,8 +113,20 @@
       <!-- Pricing Box -->
       <div class="product-price-box">
         <div class="price-main-row">
-          <span class="price-current-large" id="ProductPrice">$89.00 USD</span>
-          <s class="price-compare-large" id="ProductComparePrice">$139.00 USD</s>
+          <span class="price-current-large" id="ProductPrice">
+            {% if current_product.price %}
+              {{ current_product.price | money }}
+            {% else %}
+              $89.00 USD
+            {% endif %}
+          </span>
+          <s class="price-compare-large" id="ProductComparePrice">
+            {% if current_product.compare_at_price > current_product.price %}
+              {{ current_product.compare_at_price | money }}
+            {% else %}
+              $139.00 USD
+            {% endif %}
+          </s>
           <span class="price-discount-pill">SAVE $50 (36% OFF)</span>
         </div>
         <div class="installments-row">
@@ -114,7 +140,7 @@
       <div class="stock-scarcity-card">
         <div class="scarcity-header">
           <span class="scarcity-fire">🔥 Limited Production Batch:</span>
-          <span>Only <strong>6 chairs</strong> remaining at $89.00 promotional price!</span>
+          <span>Only <strong>6 chairs</strong> remaining at promotional price!</span>
         </div>
         <div class="scarcity-progress-bar">
           <div class="scarcity-progress-fill" style="width: 88%;"></div>
@@ -145,14 +171,14 @@
 
       <!-- Add to Cart Form -->
       <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" id="MainAddToCartForm" class="product-purchase-form">
-        <input type="hidden" name="id" value="67868873621716">
+        <input type="hidden" name="id" id="ProductVariantIdInput" value="{{ current_variant_id }}">
         <input type="hidden" name="quantity" id="ProductQuantityInput" value="1">
 
         <div class="form-cta-row">
           <div class="qty-stepper-box">
-            <button type="button" class="stepper-btn" id="QtyMinus">-</button>
+            <button type="button" class="stepper-btn" id="QtyMinus" aria-label="Decrease quantity">-</button>
             <span class="stepper-val" id="QtyDisplay">1</span>
-            <button type="button" class="stepper-btn" id="QtyPlus">+</button>
+            <button type="button" class="stepper-btn" id="QtyPlus" aria-label="Increase quantity">+</button>
           </div>
 
           <button type="button" class="btn btn-primary btn-lg main-atc-btn" id="MainAddToCartBtn">
@@ -203,9 +229,14 @@
   "name": "Main Product Section",
   "settings": [
     {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Select Product (Optional)"
+    },
+    {
       "type": "text",
       "id": "title",
-      "label": "Title",
+      "label": "Heading",
       "default": "Ragaoon Ergonomic Gaming Chair"
     }
   ],
