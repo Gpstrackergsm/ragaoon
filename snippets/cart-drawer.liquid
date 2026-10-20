@@ -18,21 +18,17 @@
       </button>
     </div>
 
-    <!-- Free Shipping Goal Progress Bar ($75 Threshold) -->
+    <!-- Free Shipping Status (Consistent across store) -->
     <div class="cart-drawer-shipping-meter">
-      {% assign threshold = settings.free_shipping_threshold | default: 75 | times: 100 %}
-      {% assign remaining = threshold | minus: cart.total_price %}
       <div class="shipping-meter-text" data-shipping-meter-text>
-        {% if cart.total_price >= threshold %}
-          <span class="shipping-unlocked">🎉 <strong>CONGRATULATIONS!</strong> You unlocked <strong>FREE Express Delivery</strong>!</span>
+        {% if cart.item_count > 0 %}
+          <span class="shipping-unlocked">🎉 <strong>FREE EXPRESS DELIVERY UNLOCKED</strong> &bull; 2&ndash;4 Business Days</span>
         {% else %}
-          <span>Add <strong>{{ remaining | money }}</strong> more to unlock <strong>FREE Express Delivery</strong>!</span>
+          <span>🚚 <strong>FREE Express Delivery Included</strong> on All Ragaoon Chair Orders</span>
         {% endif %}
       </div>
       <div class="shipping-meter-bar">
-        {% assign progress_pct = cart.total_price | times: 100 | divided_by: threshold %}
-        {% if progress_pct > 100 %}{% assign progress_pct = 100 %}{% endif %}
-        <div class="shipping-meter-fill" style="width: {{ progress_pct }}%;" data-shipping-meter-fill></div>
+        <div class="shipping-meter-fill" style="width: 100%;" data-shipping-meter-fill></div>
       </div>
     </div>
 

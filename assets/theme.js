@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initReclineVisualizer();
   initFAQAccordion();
   initStickyATC();
-  initCountdownTimer();
   initQuantityStepper();
   initMobileMenu();
-  initLiveViewerCounter();
   initPolicyModal();
 });
 
@@ -267,20 +265,16 @@ async function refreshCartDrawer(triggerHighlight = false) {
     el.textContent = ShopifyCart.moneyFormat(cart.total_price);
   });
 
-  // 3. Update Free Shipping Goal Progress
-  const threshold = ShopifyCart.freeShippingThreshold;
+  // 3. Update Free Shipping Status (Consistent across entire store)
   const progressFill = document.querySelector('[data-shipping-meter-fill]');
   const progressText = document.querySelector('[data-shipping-meter-text]');
 
   if (progressFill && progressText) {
-    const progressPct = Math.min(100, Math.round((cart.total_price / threshold) * 100));
-    progressFill.style.width = `${progressPct}%`;
-
-    if (cart.total_price >= threshold) {
-      progressText.innerHTML = '<span class="shipping-unlocked">🎉 <strong>CONGRATULATIONS!</strong> You unlocked <strong>FREE Express Delivery</strong>!</span>';
+    progressFill.style.width = '100%';
+    if (cart.item_count > 0) {
+      progressText.innerHTML = '<span class="shipping-unlocked">🎉 <strong>FREE EXPRESS DELIVERY UNLOCKED</strong> &bull; 2&ndash;4 Business Days</span>';
     } else {
-      const remainingCents = threshold - cart.total_price;
-      progressText.innerHTML = `<span>Add <strong>${ShopifyCart.moneyFormat(remainingCents)}</strong> more to unlock <strong>FREE Express Delivery</strong>!</span>`;
+      progressText.innerHTML = '<span>🚚 <strong>FREE Express Delivery Included</strong> on All Ragaoon Chair Orders</span>';
     }
   }
 

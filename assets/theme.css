@@ -2718,3 +2718,68 @@ button, input, select {
   color: #fff;
 }
 
+/* ==========================================================================
+   TRANSPARENT FULFILLMENT & GUARANTEE CARD
+   ========================================================================== */
+.verified-fulfillment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+.fulfillment-guarantee-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.fulfillment-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.fulfillment-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.fulfillment-row svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fulfillment-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fulfillment-row strong {
+  font-size: 0.88rem;
+  color: #ffffff;
+}
+
+.fulfillment-row span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
