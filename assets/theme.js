@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuantityStepper();
   initMobileMenu();
   initPolicyModal();
+  initScrollToATC();
 });
 
 /* ==========================================================================
@@ -138,9 +139,23 @@ function initShopifyCart() {
       await refreshCartDrawer(true);
       openDrawer();
     } catch (err) {
-      console.error('Add to Cart error:', err);
-      // If error (e.g., in theme editor preview without active session), fallback gracefully
-      alert(err.message || 'Error adding to cart. Please try again.');
+      console.warn('Shopify Cart AJAX note:', err);
+      const notice = document.getElementById('AddToCartNotice');
+      if (notice) {
+        notice.style.display = 'block';
+        notice.className = 'atc-inline-notice atc-notice-info';
+        notice.innerHTML = '<span>Proceeding with order...</span>';
+      }
+      // If AJAX encounters session issue or unlisted variant, fallback to standard form submit
+      if (mainForm && typeof mainForm.submit === 'function') {
+        mainForm.submit();
+        return;
+      }
+      if (notice) {
+        notice.className = 'atc-inline-notice atc-notice-error';
+        notice.innerHTML = `<span>${err.message || 'Unable to update cart. Please try again.'}</span>`;
+        setTimeout(() => { notice.style.display = 'none'; }, 4000);
+      }
     } finally {
       setTimeout(() => {
         buttonEl.innerHTML = originalHTML;
@@ -738,5 +753,29 @@ function initPolicyModal() {
       }
     });
   }
+}
+
+/* ==========================================================================
+   10. INSTANT SCROLL-TO-PURCHASE WITH BUTTON ATTENTION PULSE
+   ========================================================================== */
+function initScrollToATC() {
+  const scrollTriggers = document.querySelectorAll('.js-scroll-to-atc, a[href="#ProductOverview"]');
+  scrollTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      const target = document.getElementById('ProductOverview');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const atcBtn = document.getElementById('MainAddToCartBtn');
+        const buyNowBtn = document.getElementById('MainBuyNowBtn');
+        const targetBtn = atcBtn || buyNowBtn;
+        if (targetBtn) {
+          targetBtn.classList.remove('pulse-highlight');
+          setTimeout(() => targetBtn.classList.add('pulse-highlight'), 350);
+          setTimeout(() => targetBtn.classList.remove('pulse-highlight'), 2200);
+        }
+      }
+    });
+  });
 }
 

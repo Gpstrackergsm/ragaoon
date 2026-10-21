@@ -2818,3 +2818,195 @@ button, input, select {
   line-height: 1.4;
 }
 
+/* ==========================================================================
+   11. CONVERSION RATE OPTIMIZATIONS (FIT SPECS, REASSURANCE, UGC)
+   ========================================================================== */
+
+/* Fit & Sizing Guide Card */
+.fit-specs-card {
+  background: rgba(24, 30, 43, 0.65);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.fit-specs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fit-specs-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.fit-verified-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-success);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fit-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+}
+
+@media (max-width: 480px) {
+  .fit-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.fit-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 12, 16, 0.45);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fit-spec-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.fit-spec-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.fit-spec-info strong {
+  font-size: 0.78rem;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.fit-spec-info span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+/* ATC Reassurance Strip */
+.atc-reassurance-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(18, 22, 31, 0.5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-top: 14px;
+}
+
+.atc-reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+  transition: var(--transition);
+}
+
+.atc-reassurance-item:hover {
+  color: #ffffff;
+}
+
+.atc-reassurance-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.atc-reassurance-item strong {
+  color: #ffffff;
+}
+
+/* Inline ATC Notice */
+.atc-inline-notice {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.atc-notice-info {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+.atc-notice-error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}
+
+/* Attention Pulse Animation for CTAs */
+@keyframes atcPulseHighlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+  }
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 0 0 16px rgba(230, 57, 70, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+  }
+}
+
+.pulse-highlight {
+  animation: atcPulseHighlight 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2 !important;
+}
+
+/* Review Buyer Photo Card */
+.review-buyer-photo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 12, 16, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  margin: 12px 0 8px 0;
+}
+
+.review-buyer-photo img {
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.photo-caption {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+
